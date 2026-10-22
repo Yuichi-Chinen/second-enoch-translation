@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>第二エノク書 日本語訳 読書版</title>
+<style>
+@page {
+  size: A5;
+  margin: 20mm 16mm 22mm 16mm;
+  @bottom-center {
+    content: counter(page);
+    writing-mode: horizontal-tb;
+    font-family: "Yu Mincho", "游明朝", serif;
+    font-size: 8pt;
+    color: #555;
+  }
+}
+@page cover { @bottom-center { content: none; } }
+
+html { writing-mode: vertical-rl; }
+body {
+  margin: 0;
+  font-family: "Yu Mincho", "游明朝", "YuMincho", "Nyala", "Ebrima", serif;
+  font-size: 9.5pt;
+  line-height: 1.8;
+  color: #111;
+  background: #fff;
+  font-feature-settings: "palt" 0;
+  text-align: justify;
+  line-break: strict;
+}
+b { font-weight: 600; }
+
+/* 一ページ全面を使う扉類 */
+.cover, .part-title {
+  page: cover;
+  block-size: 116mm;
+  inline-size: 168mm;
+  break-after: page;
+  display: flex;
+  justify-content: center;
+}
+.part-title { break-before: page; }
+
+.cover { flex-direction: column; }
+.cover .c-title { font-size: 26pt; letter-spacing: .3em; margin: 0 0 0 0; font-weight: 600; }
+.cover .c-sub { font-size: 11pt; letter-spacing: .2em; margin-block-start: 2em; padding-block-start: 0; }
+.cover .c-note { font-size: 8.5pt; color: #444; margin-block-start: 6em; }
+.cover p, .cover h1 { margin-inline: 0; margin-block-end: 0; text-indent: 0; }
+
+.pt-inner { margin-block: auto; padding-block-start: 0; }
+.part-title .pt-no { font-size: 11pt; letter-spacing: .3em; margin: 0 0 0 1.5em; padding-block-start: 4em; text-indent: 0; }
+.part-title h1 { font-size: 20pt; letter-spacing: .4em; margin: 0; padding-block-start: 4em; font-weight: 600; }
+.part-title .pt-span { font-size: 9pt; color: #444; margin: 0 1.5em 0 0; padding-block-start: 6em; text-indent: 0; }
+.part-title .pt-inner { display: flex; flex-direction: column; }
+
+/* 前付け */
+.front { break-after: page; }
+.front h2 { font-size: 13pt; letter-spacing: .3em; margin: 0 0 1.5em 0; font-weight: 600; }
+.front h3 { font-size: 10pt; margin: 1.5em 0 .3em 0; font-weight: 600; }
+.front p { margin: 0; text-indent: 1em; }
+.front ul { margin: 0; padding-inline-start: 1em; }
+
+.toc { break-after: page; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc a { color: inherit; text-decoration: none; display: flex; align-items: baseline; }
+.toc .leader { flex: 1; border-left: 1px dotted #888; margin: 0 .4em; min-block-size: 0; align-self: center; block-size: .5em; }
+.toc .n { text-combine-upright: all; }
+.toc .toc-part { font-weight: 600; margin-block-start: 1em; }
+.toc .toc-part:first-child { margin-block-start: 0; }
+.toc .toc-ch { font-size: 8.5pt; padding-inline-start: 1em; }
+.toc small { font-size: .9em; color: #444; }
+.toc .t { max-inline-size: 85%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* 本文 */
+.chapter { margin-block-start: 2.5em; }
+.part > .chapter:first-child { margin-block-start: 0; }
+.chapter h2 {
+  font-size: 12pt; font-weight: 600; letter-spacing: .2em;
+  margin: 0 0 0 .2em; break-after: avoid;
+}
+.chapter .subtitle {
+  font-size: 8.5pt; color: #444; margin: 0 0 1.2em 0; text-indent: 3em; break-after: avoid; break-before: avoid;
+}
+.chapter p { margin: 0; text-indent: 1em; orphans: 2; widows: 2; }
+.chapter .preface { font-size: .92em; color: #333; margin-block-end: .6em; }
+.v {
+  font-size: .62em; color: #777; margin-inline-end: .3em;
+  font-feature-settings: normal; text-indent: 0;
+}
+
+.notes {
+  margin-block-start: 1.2em;
+  padding-block-start: .8em;
+  border-right: .5pt solid #aaa;
+  font-size: 8pt;
+  line-height: 1.75;
+  color: #333;
+}
+.notes .notes-h { font-weight: 600; text-indent: 0; margin-block-end: .2em; }
+.notes p { text-indent: 1em; }
+.notes p + p { margin-block-start: .2em; }
+
+.colophon { break-before: page; display: flex; justify-content: flex-end; flex-direction: column; block-size: 116mm; }
+.colophon .inner { border-right: .5pt solid #888; border-left: .5pt solid #888; padding: 0 1.2em; font-size: 8.5pt; margin-inline-start: auto; }
+.colophon p { margin: 0; text-indent: 0; }
+.colophon .co-title { font-size: 11pt; font-weight: 600; margin-block-end: .8em; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <h1 class="c-title">第二エノク書</h1>
+  <p class="c-sub">エノクの秘密の書　日本語訳　読書版</p>
+  <p class="c-note">Ｗ・Ｒ・モーフィル英訳、Ｒ・Ｈ・チャールズ編（一八九六年）に基づいて訳出</p>
+</section>
+
+<section class="front">
+  <h2>はじめに</h2>
+  <p>「第二エノク書」は、「エノクの秘密の書」「スラヴ語エノク書」とも呼ばれる外典である。族長エノクが二人の天使に導かれて七つの天を昇り、天界の秩序と天地創造の秘密を主から直接示されたのち、地上に戻って子らに教えを託し、ふたたび天に取り去られるまでを、エノク自身の語りで描く。</p>
+  <p>本書は教会スラヴ語訳でのみ伝わり、元になったと推定されるギリシア語本文は失われている。成立年代には紀元一世紀ごろのユダヤ教の環境とする説から、中世の加筆を重く見る説まで幅がある。写本には内容と章立ての異なる長短二系統があり、最古の写本は十四世紀のものである。</p>
+  <h3>本書の構成</h3>
+  <ul>
+    <li>本文（第一〜六十八章）――エノクの昇天と七つの天の巡覧、天地創造の秘密の啓示、地上への帰還と子らへの訓戒、エノクの昇天と記念の祭壇</li>
+    <li>付録（第一〜五章）――メトシェラとニルの祭司職、メルキゼデクの奇跡的な誕生とエデンの園への移送、ノアの箱舟の補記。写本の一部（ソコロフ写本）にのみ見られる挿話で、チャールズは後代の増補と見ている</li>
+  </ul>
+  <h3>凡例</h3>
+  <ul>
+    <li>本訳は、パブリックドメインのＷ・Ｒ・モーフィル英訳（Ｒ・Ｈ・チャールズ編、一八九六年）を底本とし、日本語の文語調に訳出したものである。教会スラヴ語からの直接翻訳ではない。スラヴ語原文は、固有名詞や鍵語の確認に限って参照した。</li>
+    <li>章の区分・節番号は英訳底本に従う。節番号は本文中に小さく示した。</li>
+    <li>各章の題は、写本に付された見出しによる。見出しの由来（どの写本に見えるか）は訳注に記した。</li>
+    <li>第一章冒頭の序文は写本Ａにのみ見られる編者的な一段で、節番号を付さずに掲げた。</li>
+    <li>「異文」と記した節は、写本の一部にのみ見られる本文である。</li>
+    <li>本文中の（　）は、英訳者が意味を補った語句を示す。訳注は該当する章の末尾にまとめた。</li>
+    <li>本書は二段対訳（英訳・日本語訳）で作成した訳稿から、日本語訳と訳注のみを抜き出して組んだ読書用の版である。</li>
+  </ul>
+  <h3>底本</h3>
+  <ul>
+    <li>W. R. Morfill (tr.), R. H. Charles (ed.), <i>The Book of the Secrets of Enoch</i> (Oxford: Clarendon Press, 1896)</li>
+  </ul>
+</section>
+
+<nav class="toc">
+  <h2 style="font-size:13pt;letter-spacing:.3em;margin:0 0 1.2em 0;font-weight:600;">目次</h2>
+  <ol>
+<li class="toc-part"><a href="#pmain"><span class="t">本文　エノクの秘密の書</span><span class="leader"></span><span class="n">8</span></a></li>
+<li class="toc-ch"><a href="#c1"><span class="t">第一章　<small>エノクの生涯と夢について</small></span><span class="leader"></span><span class="n">9</span></a></li>
+<li class="toc-ch"><a href="#c2"><span class="t">第二章　<small>エノクが子らに与えた訓戒</small></span><span class="leader"></span><span class="n">10</span></a></li>
+<li class="toc-ch"><a href="#c3"><span class="t">第三章　<small>天使たちがエノクを第一の天へ引き上げたこと</small></span><span class="leader"></span><span class="n">11</span></a></li>
+<li class="toc-ch"><a href="#c4"><span class="t">第四章　<small>星々を治める天使たちについて</small></span><span class="leader"></span><span class="n">12</span></a></li>
+<li class="toc-ch"><a href="#c5"><span class="t">第五章　<small>天使たちが雪と氷の蔵を守ること</small></span><span class="leader"></span><span class="n">13</span></a></li>
+<li class="toc-ch"><a href="#c6"><span class="t">第六章　<small>露と油、および様々な色について</small></span><span class="leader"></span><span class="n">13</span></a></li>
+<li class="toc-ch"><a href="#c7"><span class="t">第七章　<small>エノクが第二の天へ連れて行かれたこと</small></span><span class="leader"></span><span class="n">14</span></a></li>
+<li class="toc-ch"><a href="#c8"><span class="t">第八章　<small>エノクが第三の天へ連れて行かれたこと</small></span><span class="leader"></span><span class="n">15</span></a></li>
+<li class="toc-ch"><a href="#c9"><span class="t">第九章　<small>エノクに義人たちと祈りの場所とが示されたこと</small></span><span class="leader"></span><span class="n">16</span></a></li>
+<li class="toc-ch"><a href="#c10"><span class="t">第十章　<small>エノクに恐ろしい場所と様々な責め苦とが示されたこと</small></span><span class="leader"></span><span class="n">17</span></a></li>
+<li class="toc-ch"><a href="#c11"><span class="t">第十一章　<small>エノクが第四の天へ連れて行かれ、太陽と月の運行を見たこと</small></span><span class="leader"></span><span class="n">18</span></a></li>
+<li class="toc-ch"><a href="#c12"><span class="t">第十二章　<small>太陽の不思議な生き物について</small></span><span class="leader"></span><span class="n">19</span></a></li>
+<li class="toc-ch"><a href="#c13"><span class="t">第十三章　<small>天使たちがエノクを東に連れて行き、太陽の門の前に置いたこと</small></span><span class="leader"></span><span class="n">20</span></a></li>
+<li class="toc-ch"><a href="#c14"><span class="t">第十四章　<small>天使たちがエノクを西へ連れて行ったこと</small></span><span class="leader"></span><span class="n">21</span></a></li>
+<li class="toc-ch"><a href="#c15"><span class="t">第十五章　<small>太陽の生き物、フェニックスとカルカドリが歌ったこと</small></span><span class="leader"></span><span class="n">21</span></a></li>
+<li class="toc-ch"><a href="#c16"><span class="t">第十六章　<small>天使たちがエノクを東に連れて行き、月の運行の前に置いたこと</small></span><span class="leader"></span><span class="n">22</span></a></li>
+<li class="toc-ch"><a href="#c17"><span class="t">第十七章　<small>言い表しがたい天使たちの歌について</small></span><span class="leader"></span><span class="n">24</span></a></li>
+<li class="toc-ch"><a href="#c18"><span class="t">第十八章　<small>エノクが第五の天へ連れて行かれたこと</small></span><span class="leader"></span><span class="n">24</span></a></li>
+<li class="toc-ch"><a href="#c19"><span class="t">第十九章　<small>エノクが第六の天へ連れて行かれたこと</small></span><span class="leader"></span><span class="n">26</span></a></li>
+<li class="toc-ch"><a href="#c20"><span class="t">第二十章　<small>そこからエノクが第七の天へ連れて行かれたこと</small></span><span class="leader"></span><span class="n">27</span></a></li>
+<li class="toc-ch"><a href="#c21"><span class="t">第二十一章　<small>天使たちがエノクを第七の天の果てに置き、目に見えぬ姿となって去ったこと</small></span><span class="leader"></span><span class="n">28</span></a></li>
+<li class="toc-ch"><a href="#c22"><span class="t">第二十二章　<small>エノクが主の御顔を見、油を注がれ、光の衣を着せられたこと</small></span><span class="leader"></span><span class="n">29</span></a></li>
+<li class="toc-ch"><a href="#c23"><span class="t">第二十三章　<small>エノクが自らの不思議な巡歴と天の幻視について書き記し、三百六十六の書物を著したこと</small></span><span class="leader"></span><span class="n">31</span></a></li>
+<li class="toc-ch"><a href="#c24"><span class="t">第二十四章　<small>神がエノクに大いなる秘密を明かし、顔と顔とを合わせて語られたこと</small></span><span class="leader"></span><span class="n">32</span></a></li>
+<li class="toc-ch"><a href="#c25"><span class="t">第二十五章　<small>神が最も深き闇より、見えるものと見えないものとを出現させられたこと</small></span><span class="leader"></span><span class="n">33</span></a></li>
+<li class="toc-ch"><a href="#c26"><span class="t">第二十六章　<small>神が再び深みより呼ばれ、アルカスが現れたこと</small></span><span class="leader"></span><span class="n">34</span></a></li>
+<li class="toc-ch"><a href="#c27"><span class="t">第二十七章　<small>神が水を確立し、これを光で囲み、その上に七つの島を据えられたこと</small></span><span class="leader"></span><span class="n">35</span></a></li>
+<li class="toc-ch"><a href="#c28"><span class="t">第二十八章　<small>第二日の創造について</small></span><span class="leader"></span><span class="n">36</span></a></li>
+<li class="toc-ch"><a href="#c29"><span class="t">第二十九章　<small>サタナイルが、その天使たちとともに高きところより投げ落とされたこと</small></span><span class="leader"></span><span class="n">37</span></a></li>
+<li class="toc-ch"><a href="#c30"><span class="t">第三十章　<small>神が六日間にわたり天地を創造されたこと、人の創造について</small></span><span class="leader"></span><span class="n">38</span></a></li>
+<li class="toc-ch"><a href="#c31"><span class="t">第三十一章　<small>神がアダムにパラダイスと知識とを与え、悪魔がエバを欺いたこと</small></span><span class="leader"></span><span class="n">40</span></a></li>
+<li class="toc-ch"><a href="#c32"><span class="t">第三十二章　<small>アダムの罪のゆえに、神が彼を地に送り返されたこと</small></span><span class="leader"></span><span class="n">41</span></a></li>
+<li class="toc-ch"><a href="#c33"><span class="t">第三十三章　<small>神がエノクに、この世の存続期間が七千年であり、第八千年紀が終わりであることを示されたこと</small></span><span class="leader"></span><span class="n">42</span></a></li>
+<li class="toc-ch"><a href="#c34"><span class="t">第三十四章　<small>神が偶像礼拝の者たちとソドムの民のような悪をなす者たちを告発し、これゆえに洪水をもたらされること</small></span><span class="leader"></span><span class="n">44</span></a></li>
+<li class="toc-ch"><a href="#c35"><span class="t">第三十五章　<small>神が、エノクの家系からひとりの義人を残されること</small></span><span class="leader"></span><span class="n">45</span></a></li>
+<li class="toc-ch"><a href="#c36"><span class="t">第三十六章　<small>神がエノクに、子らを教えるため地上に三十日とどまるよう命じられたこと</small></span><span class="leader"></span><span class="n">46</span></a></li>
+<li class="toc-ch"><a href="#c37"><span class="t">第三十七章　<small>神がひとりの天使を呼ばれたこと</small></span><span class="leader"></span><span class="n">46</span></a></li>
+<li class="toc-ch"><a href="#c38"><span class="t">第三十八章　<small>メトシェラが昼も夜も、父エノクの床のかたわらで待ち望んだこと</small></span><span class="leader"></span><span class="n">47</span></a></li>
+<li class="toc-ch"><a href="#c39"><span class="t">第三十九章　<small>エノクが、涙と深い悲しみとをもって子らに悲痛な訓戒を語ったこと</small></span><span class="leader"></span><span class="n">48</span></a></li>
+<li class="toc-ch"><a href="#c40"><span class="t">第四十章　<small>エノクが子らに、自ら見て聞いて書き記したすべてのことを、主の御口から忠実に教えたこと</small></span><span class="leader"></span><span class="n">49</span></a></li>
+<li class="toc-ch"><a href="#c41"><span class="t">第四十一章　<small>エノクがアダムの罪のために泣いたこと</small></span><span class="leader"></span><span class="n">51</span></a></li>
+<li class="toc-ch"><a href="#c42"><span class="t">第四十二章　<small>エノクが、地獄の門の鍵を守る者たちを見たこと、および幸いなる者たちについて</small></span><span class="leader"></span><span class="n">52</span></a></li>
+<li class="toc-ch"><a href="#c43"><span class="t">第四十三章　<small>エノクが子らに、自ら測り、書き記した神の裁きについて示したこと</small></span><span class="leader"></span><span class="n">54</span></a></li>
+<li class="toc-ch"><a href="#c44"><span class="t">第四十四章　<small>エノクが子らに、人を、大いなる者も小さき者も、そしってはならないと教えたこと</small></span><span class="leader"></span><span class="n">55</span></a></li>
+<li class="toc-ch"><a href="#c45"><span class="t">第四十五章　<small>神は人からの犠牲や焼き尽くす献げ物ではなく、清く悔いた心を求められること</small></span><span class="leader"></span><span class="n">56</span></a></li>
+<li class="toc-ch"><a href="#c46"><span class="t">第四十六章　<small>地上の君主でさえ、卑しく汚れた贈り物を人から受け取らないこと。まして神は汚れた贈り物をなおのこと忌み嫌われること</small></span><span class="leader"></span><span class="n">57</span></a></li>
+<li class="toc-ch"><a href="#c47"><span class="t">第四十七章　<small>エノクが、神の御口から出た教えを子らに語り、この書物の写本を彼らに与えたこと</small></span><span class="leader"></span><span class="n">58</span></a></li>
+<li class="toc-ch"><a href="#c48"><span class="t">第四十八章　<small>太陽が七つの軌道を巡ることについて</small></span><span class="leader"></span><span class="n">59</span></a></li>
+<li class="toc-ch"><a href="#c49"><span class="t">第四十九章　<small>エノクが子らに、天によっても地によっても誓ってはならないと教え、母の胎にいるうちから神が人に約束を与えられることを示したこと</small></span><span class="leader"></span><span class="n">60</span></a></li>
+<li class="toc-ch"><a href="#c50"><span class="t">第五十章　<small>地に生まれた者は誰も身を隠すことができず、その行いも隠されないこと。しばらくの間、地上で誘惑と苦難とに耐え、やもめと孤児を害してはならないこと</small></span><span class="leader"></span><span class="n">61</span></a></li>
+<li class="toc-ch"><a href="#c51"><span class="t">第五十一章　<small>エノクが子らに、地上に宝を隠すのではなく、貧しい者に施しをするよう教えたこと</small></span><span class="leader"></span><span class="n">62</span></a></li>
+<li class="toc-ch"><a href="#c52"><span class="t">第五十二章　<small>神が、その忠実な僕たちに、その御名をいかに賛美すべきかを教えられたこと</small></span><span class="leader"></span><span class="n">63</span></a></li>
+<li class="toc-ch"><a href="#c53"><span class="t">第五十三章　<small>われらの父が神のみもとにあって裁きの日にわれらのために執り成すと言ってはならないこと。父が子を、子が父を助けることはできないから</small></span><span class="leader"></span><span class="n">64</span></a></li>
+<li class="toc-ch"><a href="#c54"><span class="t">第五十四章　<small>エノクが子らに、この書物を他の人々に与えるよう命じたこと</small></span><span class="leader"></span><span class="n">65</span></a></li>
+<li class="toc-ch"><a href="#c55"><span class="t">第五十五章　<small>エノクが子らに宣言し、涙をもって語ったこと。「わが子らよ、わが時は近づいた。私は天へ行かねばならない。見よ、天使たちが私の前に立っている」</small></span><span class="leader"></span><span class="n">65</span></a></li>
+<li class="toc-ch"><a href="#c56"><span class="t">第五十六章　<small>メトシェラが父に祝福を求め、パンを食べるよう願ったこと</small></span><span class="leader"></span><span class="n">66</span></a></li>
+<li class="toc-ch"><a href="#c57"><span class="t">第五十七章　<small>エノクが子メトシェラに、すべての兄弟たちを呼び集めるよう命じたこと</small></span><span class="leader"></span><span class="n">67</span></a></li>
+<li class="toc-ch"><a href="#c58"><span class="t">第五十八章　<small>エノクが子らに、主がアダムのゆえに地上に来られたときのことを語ったこと</small></span><span class="leader"></span><span class="n">67</span></a></li>
+<li class="toc-ch"><a href="#c59"><span class="t">第五十九章　<small>エノクが子らすべてに、家畜の肉に触れてはならない理由を、そこから生じることのゆえに教えたこと</small></span><span class="leader"></span><span class="n">68</span></a></li>
+<li class="toc-ch"><a href="#c60"><span class="t">第六十章　<small>人を、武器によっても舌によっても殺してはならないこと</small></span><span class="leader"></span><span class="n">69</span></a></li>
+<li class="toc-ch"><a href="#c61"><span class="t">第六十一章　<small>エノクが子らに、あらゆる不義から自らを守り、しばしば手を貧しい者に差し伸べ、その労苦から分け与えるよう戒めたこと</small></span><span class="leader"></span><span class="n">70</span></a></li>
+<li class="toc-ch"><a href="#c62"><span class="t">第六十二章　<small>信仰をもって捧げ物を携えて来ることがふさわしいこと。死後には悔い改めがないこと</small></span><span class="leader"></span><span class="n">71</span></a></li>
+<li class="toc-ch"><a href="#c63"><span class="t">第六十三章　<small>貧しい者を軽んじてはならず、誠実に与えるべきこと。さもなくば神の前で呪われるであろうこと</small></span><span class="leader"></span><span class="n">72</span></a></li>
+<li class="toc-ch"><a href="#c64"><span class="t">第六十四章　<small>主がエノクをお呼びになったので、民がアフザンという場所へ行き、彼に口づけしようと相談したこと</small></span><span class="leader"></span><span class="n">73</span></a></li>
+<li class="toc-ch"><a href="#c65"><span class="t">第六十五章　<small>エノクの子らへの勧めの言葉</small></span><span class="leader"></span><span class="n">74</span></a></li>
+<li class="toc-ch"><a href="#c66"><span class="t">第六十六章　<small>エノクが子らと民のすべての長老たちに、いかに恐れとおののきとをもって主の御前を歩み、主にのみ仕え、偶像を拝んではならないかを教えたこと。神が天と地とすべての被造物とその姿とを造られたゆえに</small></span><span class="leader"></span><span class="n">75</span></a></li>
+<li class="toc-ch"><a href="#c67"><span class="t">第六十七章　<small>主が地の上に闇を送り、民とエノクとを覆われたこと。エノクは高く上げられ、天には光があったこと</small></span><span class="leader"></span><span class="n">77</span></a></li>
+<li class="toc-ch"><a href="#c68"><span class="t">第六十八章　<small>エノクの生涯の日数について、また、メトシェラと兄弟たちがアフザンに祭壇を築いたこと</small></span><span class="leader"></span><span class="n">78</span></a></li>
+<li class="toc-part"><a href="#pappx"><span class="t">付録　メルキゼデクの書</span><span class="leader"></span><span class="n">80</span></a></li>
+<li class="toc-ch"><a href="#a1"><span class="t">付録第一章　<small>メトシェラが民の祭司として立てられたこと</small></span><span class="leader"></span><span class="n">81</span></a></li>
+<li class="toc-ch"><a href="#a2"><span class="t">付録第二章　<small>メトシェラの死とニルへの祭司職の継承、および大洪水の予告</small></span><span class="leader"></span><span class="n">83</span></a></li>
+<li class="toc-ch"><a href="#a3"><span class="t">付録第三章　<small>ニルの妻ソポニマの死と、幼子メルキゼデクの奇跡的な出現</small></span><span class="leader"></span><span class="n">87</span></a></li>
+<li class="toc-ch"><a href="#a4"><span class="t">付録第四章　<small>大天使ミカエルがメルキゼデクをエデンの楽園へ移したこと、およびニルの死</small></span><span class="leader"></span><span class="n">92</span></a></li>
+<li class="toc-ch"><a href="#a5"><span class="t">付録第五章　<small>ノアの箱舟についての補記</small></span><span class="leader"></span><span class="n">94</span></a></li>
+  </ol>
+</nav>
+
+<section class="part-title" id="pmain"><div class="pt-inner"><p class="pt-no">本文</p><h1>エノクの秘密の書</h1><p class="pt-span">第一章〜第六十八章</p></div></section>
+<section class="part">
+<article class="chapter"><h2 id="c1">第一章</h2>
+<p class="subtitle">エノクの生涯と夢について</p>
+<p class="preface">ひとりの、きわめて知恵ある人、大いなる業を成す者があった。神は彼を愛し、迎え入れられた。それは、彼が天の住まい、知恵深く、大いなる、計り知れず変わることのない神、万物の主、驚くべき、栄光に満ち、輝かしく、すべてを見通される主の僕たちの立つ場所、そして主の近づきがたい御座、また実体なき者たちの階級と現れを見、ケルビムの群れの言い表しがたい奉仕、その様々な姿、言い表しがたい歌声、そして測り知れない世界を目の当たりにするためであった。</p>
+<p><span class="v">一</span>そのとき、彼は言った。「私は百六十五年を経るか経ないかのうちに、わが子メトシェラをもうけた。その後、私は二百年生き、わが生涯の全年月、三百六十五年を全うした。</p>
+<p><span class="v">二</span>正月の一日、私はひとり家におり、床に休んで眠った。</p>
+<p><span class="v">三</span>眠っているうちに、大いなる悲しみが私の心に臨み、私は夢の中で涙を流した。この悲しみが何を意味するのか、また私に何が起ころうとしているのか、私には理解できなかった。</p>
+<p><span class="v">四</span>すると、私にはこの地上で見たこともないほど背の高い二人の人が現れた。</p>
+<p><span class="v">五</span>彼らの顔は太陽のように輝き、その目は燃える灯火のようであった。その唇からは火が出ていた。その衣は羽毛のようであり、その足は紫色で、その翼は金よりも輝き、その手は雪よりも白かった。彼らは私の床の頭のところに立ち、私の名を呼んだ。</p>
+<p><span class="v">六</span>私は眠りから覚め、この人たちが目の前に立っているのをはっきりと見た。</p>
+<p><span class="v">七</span>私は急いで彼らにひれ伏した。そして恐れおののき、恐怖のために私の顔つきは変わった。</p>
+<p><span class="v">八</span>すると、この人たちは私に言った。「エノクよ、心を強くせよ、恐れるな。とこしえの神があなたのもとに私たちを遣わされた。見よ、今日あなたは私たちとともに天に昇るであろう。</p>
+<p><span class="v">九</span>あなたの息子たちと、あなたの家で働くすべての僕たちに告げよ。そして、主があなたを彼らのもとに連れ戻されるまで、誰もあなたを捜し求めてはならない。」</p>
+<p><span class="v">十</span>私は急いで彼らに従い、家を出た。そして、私は息子たちメトシェラ、レギム、ガイダルを呼び、この二人の人が私に語った驚くべきことを彼らに告げた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>冒頭の一段落（「ひとりの、きわめて知恵ある人…」）は写本Aにのみ見られる編集者的な序文で、Charlesはこれを本来の本文ではないと考えつつも資料的価値を認めて角括弧付きで採録している。本訳でも同様の扱いとした。十節の「メトシェラ」は、教会スラヴ語原文（プーシキン館版）では「Мефусал」と綴られ、聖書のスラヴ語訳の伝統的な綴り「Мафусал」（創世記五章二十一節）とは異なる点が同版の注記で指摘されている——ヘブライ語の綴りに近い形が本外典の写本に保存されていることを示す一例である。なお本章は、地上のエノクが二人の光り輝く者（天使）に導かれ、天への昇天を告げられる場面であり、後続の諸章（天界巡歴の幻視）への導入部にあたる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c2">第二章</h2>
+<p class="subtitle">エノクが子らに与えた訓戒</p>
+<p><span class="v">一</span>「わが子らよ、私に聞け。私は自分がどこへ行くのか、また何が私を待ち受けているのか知らないのだから。</p>
+<p><span class="v">二</span>さて、わが子らよ、私はあなたがたに言う。神から離れてはならない。主の御顔の前を歩み、その裁きを守れ。また、天と地を造らなかった空しい神々を拝んではならない。これらは滅び去るものであり、これらを拝む者たちもまた滅びるのだから。</p>
+<p><span class="v">三</span>しかし、神があなたがたの心を、主を畏れることのうちに強くされるように。</p>
+<p><span class="v">四</span>さて、わが子らよ、主が私をあなたがたのもとに連れ戻されるまで、誰も私を捜し求めてはならない。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>本章は写本Aにのみ「[エノクがその子らをいかに教えたか]」という見出しが付されている（第一章の冒頭序文と同様、Charlesは資料的価値を認めつつ本来の本文ではないと注記している）。内容は短く、エノクが昇天を前に子らへ最初の訓戒を与える場面であり、偶像礼拝への戒めという第二エノク書全体を貫く倫理的訓戒の主題がここに早くも現れている。二節の「空しい神々」の戒めはエレミヤ書十章十一節等の旧約の常套句に連なる表現である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c3">第三章</h2>
+<p class="subtitle">天使たちがエノクを第一の天へ引き上げたこと</p>
+<p><span class="v">一</span>私が子らに語り終えたとき、そのことが起こった。この人たちは私を呼び、その翼に乗せて、私を雲の上に置いた。そして見よ、雲は動き出した。</p>
+<p><span class="v">二</span>さらに高く昇ると、私は大気を見た。なおも高く昇ると、私は天空の火気を見た。そして彼らは私を第一の天に置いた。</p>
+<p><span class="v">三</span>彼らは私に、地上の海よりもはるかに大きい、非常に大いなる海を示した。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>本章から、エノクが天使たちに導かれて諸天を巡歴する幻視が始まる（第三十八章頃までとされる）。二節の「エーテル」（ether、天空の火気）は、大気圏を超えた天界の物質を指す当時の宇宙観の語彙で、Charlesの英訳もギリシア語由来の術語をそのまま用いている。三節の「大いなる海」は、後続の章（第四章以下）で語られる星々や気象を司る天使たちの領域である第一の天に置かれた、地上の海とは異なる天上の海を指すと解される。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c4">第四章</h2>
+<p class="subtitle">星々を治める天使たちについて</p>
+<p><span class="v">一</span>彼らは私の顔の前に、長老たちと、星々の階級を治める者たちとを連れて来て、私に、星々とその天の務めとを治める二百の天使たちを示した。</p>
+<p><span class="v">二</span>彼らは翼をもって飛び、漂う星々のすべての周りを巡る。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出し「[星々を治める天使たちについて]」は写本Aのみに見える。星々を治める二百の天使という数は、第一エノク書「天文の書」（[[project_apocrypha-translation-projects]]で既訳）に見られる、星々の運行を司る天使ウリエルを中心とした記述とは異なる伝承系統を示しており、両書の宇宙論の相違点の一つである。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c5">第五章</h2>
+<p class="subtitle">天使たちが雪と氷の蔵を守ること</p>
+<p><span class="v">一</span>それから私は目を上げて、雪と氷の蔵、また、その恐るべき貯蔵所を守る天使たちを見た。</p>
+<p><span class="v">二</span>また、雲の蔵を見た。雲はそこから出て来て、そこへと入って行く。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出し「[天使たちが雪と氷の蔵を守ることについて]」は写本Aのみに見える。雪・氷・雲の「蔵」（貯蔵所）という発想は、ヨブ記三十八章二十二節（「あなたは雪の蔵に入ったことがあるか」）に代表される旧約の宇宙論的語彙に連なるものであり、続く第六章の露と油の蔵の記述とともに、天上の自然現象を天使たちが管理する倉庫として描く一連の幻視を構成している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c6">第六章</h2>
+<p class="subtitle">露と油、および様々な色について</p>
+<p><span class="v">一</span>彼らは私に、注ぎの油のような露の蔵を示した。その姿は、地上のあらゆる色をそのままに映すかのようであった。また、その蔵を守る多くの天使たちがおり、彼らはこれを閉ざしたり開いたりしていた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>本章は英訳原文でも節番号が付されておらず、単一の段落として伝わっている。見出し「[露と油、および様々な色について]」は写本Aのみに見える。「注ぎの油のような露」という比喩は、出エジプト記三十章の聖別の油の記述を連想させ、天上の自然現象が地上の祭儀的な事物になぞらえて描かれている点が特徴的である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c7">第七章</h2>
+<p class="subtitle">エノクが第二の天へ連れて行かれたこと</p>
+<p><span class="v">一</span>この人たちは私をそこから連れ、第二の天へと連れて行き、私に闇を示した。そこで私は、とこしえの裁きを待って留め置かれ、宙吊りにされている囚人たちを見た。</p>
+<p><span class="v">二</span>これらの天使たちの姿は暗く、地上の闇よりもなお暗かった。彼らは絶え間なく、一時も休まず泣いていた。私は共にいた人たちに言った。「なぜこの者たちは絶えず苦しめられているのですか。」</p>
+<p><span class="v">三</span>すると、この人たちは私に答えた。「これらは主から離れ去った者たちである。神の戒めに従わず、自らの意志によって謀り、その首領とともに背いて、すでに第二の天に閉じ込められている者たちである。</p>
+<p><span class="v">四</span>私は彼らを深く憐れんだ。すると見よ、この天使たちは私にひれ伏し、私に言った。「おお、神の人よ、私たちのために主に祈ってください。」</p>
+<p><span class="v">五</span>私は彼らに答えた。「死すべき人間にすぎない私が、どうして天使たちのために祈ることができましょうか。私がどこへ行くのか、また何が私を待ち受けているのか、誰が知っているでしょうか。誰が私のために祈ってくれるでしょうか。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出し「[エノクが第二の天へ連れて行かれたこと]」は写本Bのみに見える。三節の「その首領」は第十八章三節で「サタナイル（Satanail）」と名指される、堕天使たちの首領を指す（脚注参照）。とこしえの裁きを待つ堕天使という主題は、第一エノク書十章・第二ペテロ二章四節・ユダの手紙六節に連なる伝承である。四〜五節の、天使が人間エノクに執り成しの祈りを求める場面は、第一エノク書十三章四節の見張りの天使たちがエノクに嘆願書の起草を求める場面と対応している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c8">第八章</h2>
+<p class="subtitle">エノクが第三の天へ連れて行かれたこと</p>
+<p><span class="v">一</span>この人たちは私をそこから連れ、第三の天へと連れて行き、私をある園の中に置いた。それは、その麗しさにおいて、かつて知られたことのない場所であった。</p>
+<p><span class="v">二</span>私は、美しい色をしたあらゆる木々と、その熟して香り高い実、また、それらが生み出す、快い芳香とともに萌え出ずるあらゆる種類の食物を見た。</p>
+<p><span class="v">三</span>そして、その場所の真ん中には命の木があり、神がパラダイスに来られるとき、この木の上に憩われる。</p>
+<p><span class="v">四</span>この木は、その卓越と芳しい香りゆえに、言葉に尽くすことができない。それは、造られたいかなるものよりも美しい。その姿は、あらゆる方向から見て、金と紅のようであり、火のように透き通っており、すべてを覆っている。</p>
+<p><span class="v">五</span>その根元から、園の中に四つの流れが出ており、それらは蜜と乳、油と葡萄酒とを注ぎ出し、四つの方向に分かれ、緩やかな流れをもって巡っている。</p>
+<p><span class="v">六</span>それらはエデンのパラダイスへと下って行く。朽ちるものと朽ちないものとの間にあって。そこから、それらは地に沿って流れ、他の元素と同じように、その周回において巡行する。</p>
+<p><span class="v">七</span>また別の木があり、それは絶えず油を滴らせるオリーブの木である。そこには実を結ばない木は一本もなく、すべての木が祝福されている。</p>
+<p><span class="v">八</span>また、非常に栄光に満ちた三百の天使たちがいて、園を守っており、絶えることのない声と祝福された歌をもって、日ごとに主に仕えている。私は言った。「なんと祝福されたこの場所であろうか。」すると、この人たちは私に語った。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出し「[エノクが第三の天へ連れて行かれたこと]」は写本Bのみに見える。本章の楽園（パラダイス）の描写は創世記二章九節の命の木、および第一エノク書二十四〜二十五章・三十二章の類似の楽園幻視に連なるものであり、蜜・乳・油・葡萄酒の四つの流れという発想は、後代のパウロ黙示録（Apocalypse of Pauli）にも取り込まれている（チャールズ注）。次章（第九章）へ地の文が続く。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c9">第九章</h2>
+<p class="subtitle">エノクに義人たちと祈りの場所とが示されたこと</p>
+<p><span class="v">一</span>「おおエノクよ、この場所は、その魂を苦しめる者たちからのあらゆる種類の攻撃を生涯にわたって耐え忍ぶ義人たちのために備えられている。彼らは不義から目をそむけ、正しい裁きを行い、また飢えた者にパンを与え、裸の者を着せ、倒れた者を起こし、虐げられた孤児を助け、主の御顔の前を非のうちどころなく歩み、主にのみ仕える者たちである。彼らのために、この場所はとこしえの嗣業として備えられている。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>本章は英訳原文でも節番号を持たない一続きの段落として伝わっている。見出し「[エノクに義人たちと祈りの場所とが示されたこと]」は写本Aのみに見える。飢えた者への施しや裸の者を着せるといった義の実践の列挙は、エゼキエル書十八章七〜八節やマタイ福音書二十五章三十四節以下の「山羊と羊のたとえ」の系譜に連なる倫理的訓戒である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c10">第十章</h2>
+<p class="subtitle">エノクに恐ろしい場所と様々な責め苦とが示されたこと</p>
+<p><span class="v">一</span>それから、この人たちは私を北の地方へと導き、そこで私に、ある非常に恐ろしい場所を示した。</p>
+<p><span class="v">二</span>そこには、荒々しい闇と、突き通しがたい暗黒とがあった。そこには光はなく、ただ陰鬱な火が絶えず燃えており、火の川が流れ出ていた。</p>
+<p><span class="v">三</span>その場所はあらゆる方向に火があり、あらゆる方向に冷たさと氷があった。このようにして、そこは燃えると同時に凍りついていた。また、囚人たちは非常に荒々しく、天使たちは恐ろしく、憐れみを知らず、荒々しい武器を携え、その責め苦は容赦のないものであった。</p>
+<p><span class="v">四</span>私は言った。「ああ、なんと恐ろしいことか、この場所は。」すると、この人たちは私に言った。「エノクよ、この場所は、神を敬わない者たち、すなわち、地上でソドムの悪しき行い、呪術、まじない、悪魔の魔術を行う者たち、また自らの悪しき行い——盗み、偽り、中傷、妬み、悪しき思い、姦淫、殺人——を誇る者たちのために備えられている。</p>
+<p><span class="v">五</span>哀れな人々の魂を盗み、貧しい者を虐げてその持ち物を奪い、他人の持ち物を取り上げて彼らを傷つけながら、自らは富む者たち。飢えた者に食べさせることができるのに、飢え死にするに任せる者たち。着せることができるのに、裸のままにしておく者たち。</p>
+<p><span class="v">六</span>自らの造り主を知らず、命なき神々を拝んだ者たち。見ることも聞くこともできない空しい神々を拝み、偶像の形を造り、手で作られた卑しむべきものにひれ伏す者たち。これらすべての者のために、この場所はとこしえの嗣業として備えられている。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。地獄の描写における「火と氷が同時にある」という逆説的な情景は第一エノク書十四章十三節の神の住まいの描写（「火のように熱く、氷のように冷たい」）に由来すると考えられる（チャールズ注）。原文ではラテン語の術語（vitium sodomiticum）が用いられている箇所があり、本訳では文意を汲んで「ソドムの悪しき行い」と訳した。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c11">第十一章</h2>
+<p class="subtitle">エノクが第四の天へ連れて行かれ、太陽と月の運行を見たこと</p>
+<p><span class="v">一</span>この人たちは私を連れ、第四の天へと導き、太陽と月の、あらゆる行き来と、その光のあらゆる輝きとを私に示した。私はそれらの運行を測り、その光を計算した。</p>
+<p><span class="v">二</span>私は、太陽の光が月よりも七倍大きいことを見た。私はそれらの軌道と、それぞれが乗って進む車を眺めた。それは驚くべき速さで進む風のように動き、昼も夜も、来るときも去るときも、休むことがない。</p>
+<p><span class="v">三</span>四つの大いなる星があり、それぞれの星は、太陽の車の右側で、その下に千の星を従えている。また左側にも四つあり、それぞれがその下に千の星を従えている。合わせて八千の星である。</p>
+<p><span class="v">四</span>十五万の天使たちが太陽とともに出て、昼の間これに付き従い、夜には千の天使が付き従う。それぞれの天使は六つの翼を持つ。彼らは太陽の車の前を進む。</p>
+<p><span class="v">五</span>また、百の天使が太陽を暖め、これを照らしている。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える。本章以下、第十六章までは太陽・月・星々の運行に関する天文学的な幻視が続き、第一エノク書「天文の書」（七十二〜八十二章）と主題・構成の両面で強い並行関係を持つ。ただし数値や体系の細部は両書で一致しない箇所が多く、両者は共通の伝承を独立に発展させたものと考えられる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c12">第十二章</h2>
+<p class="subtitle">太陽の不思議な生き物について</p>
+<p><span class="v">一</span>私が目を上げると、他の飛ぶ生き物たちを見た。その名はフェニックスとカルカドリといい、その姿は不思議で奇妙であった。獅子の足と尾を持ち、鰐の頭を持っていた。その姿は紫色であり、虹のようであった。その大きさは九百尺であった。</p>
+<p><span class="v">二</span>その翼は天使たちの翼のようで、それぞれ十二枚あった。彼らは太陽の車に付き従い、これとともに行き、神に命じられるままに、熱と露とをもたらす。こうして、太陽はその運行をなし、諸天の下を進み、</p>
+<p><span class="v">三</span>その光を絶えず放ちながら、地の下を進む。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。「フェニックス」と「カルカドリ」という生き物は、他の文献にほとんど例を見ない本書独自の記述であり、後者（原語からの音写、直訳すれば「青銅の蛇」の意）は第一エノク書二十章七節でケルビムと並び挙げられる「竜」と同種の天上の生き物、すなわちセラフィムの一類型と考えられている（チャールズ注）。両者は共に第十五章で太陽への賛美の歌をうたう。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c13">第十三章</h2>
+<p class="subtitle">天使たちがエノクを東に連れて行き、太陽の門の前に置いたこと</p>
+<p><span class="v">一</span>この人たちは私を東へと連れて行き、太陽が定められた季節に、また一年の月々の巡りに従い、昼と夜の時刻の数に従って出て来る門を私に示した。</p>
+<p><span class="v">二</span>私は六つの大いなる門が開いているのを見た。それぞれの門は六十一スタディオンと四分の一スタディオンの幅を持っていた。私は実際にこれを測り、太陽がそこから出て行く門の大きさがこれほどであることを理解した。太陽は西へと行き、これに対応する行程をなす。こうして、太陽はすべての月を通って進む。</p>
+<p><span class="v">三</span>第一の門からは四十二日の間出て行き、第二の門からは三十五日、第三の門からは三十五日、第四の門からは三十五日、第五の門からは三十五日、第六の門からは四十五日の間、出て行く。</p>
+<p><span class="v">四</span>こうして、太陽は時の経過とともに第六の門から戻って来る。そして、第五の門から三十五日、第四の門から三十五日、第三の門から三十五日、第六の門から四十五日の間、入って来る。</p>
+<p><span class="v">五</span>こうして……五日、第二の門から三十五日となり、一年の日々は四つの季節の巡りに従って満ちる。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。三〜五節の各門を通過する日数の記述は、底本自体の伝承過程で著しく乱れており、編者チャールズも「本章の残りの部分は絶望的に破損している」（hopelessly corrupt）と明記し、合計しても三百六十五日には一致しないことを指摘している。本訳はこの破損した英訳をそのまま忠実に日本語化したものであり、数値の不整合は底本に起因するものである。太陽が六つの門を通って昇り沈むという発想自体は、第一エノク書七十二章二〜四節の記述と対応する。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c14">第十四章</h2>
+<p class="subtitle">天使たちがエノクを西へ連れて行ったこと</p>
+<p><span class="v">一</span>それから、この人たちは私を天の西へと連れて行き、東の門に対応する六つの大いなる門が開いているのを私に示した。太陽はこれと向かい合う東の門から、三百六十五日と四分の一日という日数に従って出て行く。</p>
+<p><span class="v">二</span>こうして太陽は西の門から沈む。太陽が西の門から出て行くとき、四百の天使たちがその冠を取り、これを主のもとに携えて行く。そして太陽はその車で巡り、夜の間、七時間まるまる光なしに進む。夜の第八時に東の近くに来ると、四百の天使たちがその冠を携え来て、これを戴かせる。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える。太陽が夜の間「冠」（光輝）を主のもとに預け、朝に再び戴くという発想は、太陽が「万物の光」である神の御前では自らの光を輝かせえないという観念に基づくとチャールズは指摘し、後代のモーセ黙示録（Apocalypse of Mosis）十九章に類似の伝承が見られるという。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c15">第十五章</h2>
+<p class="subtitle">太陽の生き物、フェニックスとカルカドリが歌ったこと</p>
+<p><span class="v">一</span>そのとき、フェニックスおよびカルカドリと呼ばれる生き物たちが歌った。これゆえに、すべての鳥はその翼を打ち鳴らし、光を与える者を喜び、主の命によって歌をうたう。</p>
+<p><span class="v">二</span>光を与える者は、その輝きを全世界に与えるために来る。</p>
+<p><span class="v">三</span>彼らは私に、太陽の運行の計算を示した。太陽が入り、また出て行く門は大いなる門であり、神が一年を計算するために造られたものである。</p>
+<p><span class="v">四</span>これゆえに、太陽は大いなるものである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。すべての鳥が光を与える者（太陽）を喜んで翼を打ち鳴らすという記述は、日の出とともに鳥がさえずる情景を反映しているとチャールズは注記する。フェニックスとカルカドリについては第十二章の訳注を参照。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c16">第十六章</h2>
+<p class="subtitle">天使たちがエノクを東に連れて行き、月の運行の前に置いたこと</p>
+<p><span class="v">一</span>この人たちは私に、もう一つのもの、すなわち月の計算を示した。そのあらゆる運行と巡りとを。彼らは私に、西から東へと連なる十二の大いなる門を指し示した。月はこれらの門を通って、定まった時に入り、また出て行く。</p>
+<p><span class="v">二</span>月は、太陽が西にあるとき、第一の門から正確に三十一日、第二の門から正確に三十一日、第三の門から正確に三十日、第四の門から正確に三十日、第五の門から正確に三十一日、第六の門から正確に三十一日、第七の門から正確に三十日、第八の門から正確に三十一日、第九の門から正確に三十一日、第十の門から正確に三十日、第十一の門から正確に三十一日、第十二の門から正確に二十八日を経て、入って来る。</p>
+<p><span class="v">三</span>こうして西の門においても、その巡りは同様であり、東の門の数に対応して月は行き、一年を成し遂げる。</p>
+<p><span class="v">四</span>太陽については、三百六十五日と四分の一日がある。</p>
+<p><span class="v">五</span>しかし太陽暦の一年には三百五十四日があり、二十九日から成る十二の月を作る。そして十一日が余り、これは一年全体の太陽の周期に属し、一年全体の太陰の閏日となる。</p>
+<p><span class="v">六</span>一日の四分の一は、三年の間は数えられず、第四年目にちょうど満ちる。これゆえに、それらは三年の間は天から省かれ、日数に加えられない。これによって、数を満たすために年の季節を二つの新しい月へと変え、また数を減らすために別の二つがある。</p>
+<p><span class="v">七</span>月は西の門を通り終えると、戻って東へとその光とともに行く。こうして月は昼も夜も、天のあらゆる軌道の下を、天の風よりも速く巡って行く。そこには霊たちと生き物たち、また六つの翼を持つ天使たちが飛んでいる。</p>
+<p><span class="v">八</span>そして、十九年の周期のうちに、月の周期には七か月が計算される。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える。編者チャールズは、二節の数値がそのままでは月の運行に適用できないこと（合計すると太陽年の三百六十五日にほぼ一致し、朔望月の周期とは合わないこと）を指摘し、本来「月」とあるべき箇所が「太陽」の記述の誤伝であろうと推測している。五節は太陰年（三百五十四日）と太陽年（三百六十五日）の十一日の差（閏日）を、八節は太陰暦と太陽暦を調和させる十九年周期（メトン周期）を扱っており、いずれも古代の暦法計算に基づく記述である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c17">第十七章</h2>
+<p class="subtitle">言い表しがたい天使たちの歌について</p>
+<p><span class="v">一</span>諸天の中ほどで、私は、シンバルと笛と絶えることのない声とをもって主に仕える、武装した軍勢を見た。私はこれを聞いて心を喜ばせた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。「武装した軍勢」については、『レビの遺訓』三章が第三の天の住人について同様に、終わりの日の裁きのために備えられた軍勢として描いており、本章と主題的に対応する。写本Aはこの章にさらに「この天使たちの歌は、あらゆる思いを驚嘆させるほど、実に不思議で奇妙なものであった」という一文を加えている。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c18">第十八章</h2>
+<p class="subtitle">エノクが第五の天へ連れて行かれたこと</p>
+<p><span class="v">一</span>この人たちは私を取り、第五の天へと引き上げた。私はそこで、グリゴリ（見張りの者たち）と呼ばれる、数え切れないほど多くの軍勢を見た。その姿は人のようであったが、その大きさは巨人よりも大きかった。</p>
+<p><span class="v">二</span>その顔は憔悴し、その唇は絶えず沈黙していた。そして第五の天には奉仕がなかった。私は共にいた人たちに言った。「なぜこの者たちはこれほど憔悴し、その顔は悲しげで、唇は沈黙し、この天には奉仕がないのですか。」</p>
+<p><span class="v">三</span>すると、彼らは私に言った。「これらはグリゴリである。彼らはその首領サタナイルとともに、聖なる主を拒んだ者たちである。</p>
+<p><span class="v">四</span>これらのことのゆえに、彼らは第二の天で大いなる闇に閉じ込められている。また、彼らのうち三人が、神の御座からエルモンの地へと地上に下り、エルモン山のかたわらで謀を交わし、人の娘たちが美しいのを見て、自分たちの妻として娶った。</p>
+<p><span class="v">五</span>彼らはその行いによって地を汚した。彼らはこの世のすべての時代にわたって不法をなし、混乱をもたらした。そして巨人たちが生まれ、異様に背の高い人々が生まれ、多くの悪がはびこった。</p>
+<p><span class="v">六</span>これゆえに、神は彼らを大いなる裁きをもって裁かれた。彼らはその兄弟たちのために嘆いており、主の大いなる日に罰せられるであろう。</p>
+<p><span class="v">七</span>私はグリゴリに言った。「私はあなたがたの兄弟と、その行いと、その大いなる責め苦とを見た。私は彼らのために祈った。しかし神は、天と地が永遠に終わるまで、彼らを地の下に留めることをお定めになった。」</p>
+<p><span class="v">八</span>私はさらに言った。「兄弟たちよ、なぜあなたがたは待ち、主の御顔の前に仕えないのですか。主の御顔の前であなたがたの務めを果たし、主を最後まで怒らせてはなりません。」</p>
+<p><span class="v">九</span>彼らは私の叱責を聞き入れた。そして彼らはこの天で四つの隊列に立った。見よ、私がこの人たちとともに立っていると、四つのラッパが大きな声とともに鳴り響き、グリゴリは声をひとつにして歌った。その声は、悲しみと優しさとをもって、主の御前へと上って行った。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。「グリゴリ」（ギリシア語エグレゴロイに由来し、「見張りの者」を意味する）とその首領「サタナイル」は、第一エノク書六〜十六章の「見張りの天使」伝承（首領はシェムハザまたはアザゼル）と同系統ながら異なる展開を示す独自の伝承である。エルモン山（ヘルモン山）は第一エノク書六章六節にも見張りの天使が誓いを立てて降り立った場所として登場する。第七章で第二の天に見た堕天使たちが、ここでは「グリゴリ」としてより具体的な由来を語られる構成になっている。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c19">第十九章</h2>
+<p class="subtitle">エノクが第六の天へ連れて行かれたこと</p>
+<p><span class="v">一</span>この人たちは私をそこから連れ、第六の天へと連れて行った。私はそこで、非常に輝かしく栄光に満ちた七つの天使の隊列を見た。その顔は太陽の光よりも輝いていた。彼らは光り輝いており、その顔つき、その振る舞い、その衣の様式に、何ら違いはなかった。</p>
+<p><span class="v">二</span>これらの隊列は、星々の巡りと、月の変化と、太陽の運行とを整え、研究し、また世界の善悪の状態を監督する。</p>
+<p><span class="v">三</span>彼らは教えと訓戒、心地よい語らいと歌、あらゆる種類の栄光に満ちた賛美とを整える。これらは、天使たちを治める者として立てられた大天使たちである。彼らは天と地とにあるすべての生き物を治めている。</p>
+<p><span class="v">四</span>また、季節と年とを司る天使たちがおり、川と海とを司る天使たち、地の実りを司る者たち、すべての草木を司る天使たちがおり、あらゆる生き物にあらゆる種類の糧を与えている。</p>
+<p><span class="v">五</span>また、人のすべての魂を司る天使たちがおり、彼らは主の御顔の前で、人々のすべての行いと生涯とを書き記している。</p>
+<p><span class="v">六</span>彼らの中には七つのフェニックス、七つのケルビム、七つの六翼の生き物がおり、声をひとつにして、ひとつの声で歌っている。その歌は言い表すことができず、彼らは主の足台のもとで喜び踊る。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える。第一エノク書には見られない、第六の天のより組織立った天使の階級（暦と自然現象を司る大天使、人の魂の記録を司る天使など）の記述は、後代の『レビの遺訓』三章や、ディオニュシオス・アレオパギテスの天使九階級論の先駆的な形態として学術的に注目される（チャールズ注）。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c20">第二十章</h2>
+<p class="subtitle">そこからエノクが第七の天へ連れて行かれたこと</p>
+<p><span class="v">一</span>この人たちは私をそこから第七の天へと連れて行った。私はそこで、非常に大いなる光と、大天使たちの火のような軍勢すべて、実体なき権能、主権、支配、能力、ケルビムとセラフィム、王座、そして数多くの目の警戒とを見た。そこには十の軍団、輝きに満ちた場があった。私は恐れ、大いなる恐怖のうちに震えた。</p>
+<p><span class="v">二</span>すると、この人たちは私を取り、彼らの真ん中に連れて行き、私に言った。「エノクよ、心を強くせよ、恐れるな。」</p>
+<p><span class="v">三</span>彼らは私に、遠くから、その高き御座に座しておられる主を示した。天のすべての軍勢は近づき、その位に従って十の段に立ち、主にひれ伏した。</p>
+<p><span class="v">四</span>こうして彼らは喜びと楽しみのうちに、それぞれの場所へと進み、果てしない光の中で、低く柔らかな声で歌をうたい、栄光をもって主に仕えた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える。一節の「実体なき権能、主権、支配、能力」（incorporeal powers and lordships, principalities, and powers）は、コロサイ書一章十六節（「王座も主権も、支配も権威も」）と用語上正確に対応しており、両者の間に文献的な関わりがあることをチャールズは指摘している。三節の「十の段」は、後にユダヤ教のラビ文献（ミシュネ・トーラー等）に見られる十階級の天使論の先駆的形態と考えられる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c21">第二十一章</h2>
+<p class="subtitle">天使たちがエノクを第七の天の果てに置き、目に見えぬ姿となって去ったこと</p>
+<p><span class="v">一</span>ケルビムとセラフィムとは、主の御顔の前に立って、その御心を行いつつ、昼も夜も離れ去ることなく、その御座の周りに立っている。六つの翼を持つ生き物たちはその御座をすべて覆い、主の御顔の前で柔らかな声をもって歌う。「聖なるかな、聖なるかな、聖なるかな、万軍の神なる主よ。天と地とはあなたの栄光に満ちている。」</p>
+<p><span class="v">二</span>私がこれらすべてのことを見終えたとき、この人たちは私に言った。「エノクよ、私たちはこの時まで、あなたに付き添うよう命じられていた。」そして、この人たちは私から去り、私は二度と彼らを見なかった。私は天の果てにひとり残され、恐れて、うつ伏せに倒れ、心のうちに言った。「ああ、私は災いだ。何が私の身に起こったのか。」</p>
+<p><span class="v">三</span>すると主は、その栄光ある大天使のひとりガブリエルを遣わされた。彼は私に言った。「エノクよ、心を強くせよ、恐れるな。立ち上がり、私とともに来て、とこしえに主の御顔の前に立て。」</p>
+<p><span class="v">四</span>私は彼に答えて言った。「ああ、主よ、私の霊は恐れとおののきのために私を離れ去りました。私をこの場所に連れて来た人たちを呼んでください。私は彼らを頼りとしており、彼らとともに主の御顔の前へ行きたいのです。」</p>
+<p><span class="v">五</span>すると、ガブリエルは、風に運ばれる木の葉のように、私を急ぎ連れ去り、私を取って主の御顔の前に置いた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。一節の「聖なるかな、聖なるかな、聖なるかな」はイザヤ書六章三節の三聖唱（トリサギオン）そのものであり、天上礼拝の描写に旧約の預言書の言葉がそのまま取り込まれている。三節で名の挙がる大天使ガブリエルは、本書で個別に名指しされる最初の天使である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c22">第二十二章</h2>
+<p class="subtitle">エノクが主の御顔を見、油を注がれ、光の衣を着せられたこと</p>
+<p><span class="v">一</span>第十の天、アラヴォトにおいて、私は主の御顔の幻を見た。それは火の中で焼かれた鉄のようであり、取り出されて火花を放ち、燃えていた。このようにして、私は主の御顔を見た。しかし主の御顔は言い表すことができない。それは不思議であり、畏るべきものであり、非常に恐ろしいものである。</p>
+<p><span class="v">二</span>私は何者であって、神の言い表しがたい実体、その不思議な御顔について語ることができようか。その不思議な知識と様々な御言葉について、また手をもって造られたのではない、主の非常に大いなる御座について語ることは、私にはできない。その周りに、どれほど多くのケルビムとセラフィムの群れが立っていることか。</p>
+<p><span class="v">三</span>さらに、彼らの絶えることのない歌と、その変わることのない美しさと、主の美しさの言い表しがたい偉大さとを、誰が語りうるであろうか。</p>
+<p><span class="v">四</span>私はひれ伏し、主を拝した。</p>
+<p><span class="v">五</span>すると主はその御口をもって私に語られた。「エノクよ、心を強くせよ、恐れるな。立ち上がり、とこしえに私の御顔の前に立て。」</p>
+<p><span class="v">六</span>すると、長たる隊長ミカエルが私を引き上げ、主の御顔の前へと連れて行った。主はその僕たちを試すように言われた。「エノクを来させ、とこしえに私の御顔の前に立たせよ。」</p>
+<p><span class="v">七</span>すると、栄光ある者たちは主にひれ伏し、言った。「エノクを、御言葉のとおりに進ませてください。」</p>
+<p><span class="v">八</span>主はミカエルに言われた。「行って、エノクから地上の衣を脱がせ、私の聖なる油を彼に注ぎ、私の栄光の衣で彼を着せよ。」</p>
+<p><span class="v">九</span>こうしてミカエルは主が語られたとおりに行った。彼は私に油を注ぎ、私を着せた。その油の姿は大いなる光にも勝り、その塗油は優れた露のようであり、その香りは没薬のようで、太陽の光線のように輝いていた。</p>
+<p><span class="v">十</span>私は自分自身を見つめると、私は主の栄光ある者たちのひとりのようになっており、何ら違いはなく、恐れとおののきとは私から去った。</p>
+<p><span class="v">十一</span>主はその大天使のひとり、名をヴレティルという者をお呼びになった。彼は他の大天使たちよりも知恵に優れ、主のなされるすべてのことを書き記していた。</p>
+<p><span class="v">十二</span>主はヴレティルに言われた。「私の蔵から書物を持って来て、エノクに筆を与え、彼にその書物を解き明かせ。」ヴレティルは急いで、没薬の香りのする書物を私のもとに持って来て、その手から筆を私に与えた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章冒頭で場面は唐突に「第十の天、アラヴォト」へと移るが、第二十〜二十一章まで語られていたのは第七の天までであり、この間の飛躍（第一エノク書や本書の他の箇所では諸天は七層とされる）は写本間で古くから指摘されてきた問題である。編者チャールズは、この第十の天への言及を含む一〜三節を、他写本（B・スラヴォニク語写本Sok.）が伝えないことなどから、後代の増補である可能性を注記しつつも、本文の一部として底本に採録している。「アラヴォト」はヘブライ語アラボット（雲、大空）に由来する語で、ラビ文献（タルムード・ハギガー篇十二b）では第七の天の名とされる。十一節の「ヴレティル」（異本ではプラヴィル、ヴレヴォイル）は、他の文献に類例のない固有名で、天の書記天使として登場する。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c23">第二十三章</h2>
+<p class="subtitle">エノクが自らの不思議な巡歴と天の幻視について書き記し、三百六十六の書物を著したこと</p>
+<p><span class="v">一</span>彼（ヴレティル）は私に、天と地と海とのすべての業、その行き来、雷の轟き、太陽と月と星々の運行、その変化、季節と年、日と時、風の行き来、天使たちの数、武装した軍勢の歌について語った。</p>
+<p><span class="v">二</span>また、人に関するすべてのこと、彼らの歌のあらゆる言葉、人々の生涯、戒めと訓戒、麗しい声の歌、そして教えられるにふさわしいすべてのことについて語った。</p>
+<p><span class="v">三</span>ヴレティルは三十日三十夜にわたって私を教え、その唇は語ることを絶やさなかった。私もまた、三十日三十夜にわたって、そのすべての言葉を書き記すことをやめなかった。</p>
+<p><span class="v">四</span>ヴレティルは私に言った。「私があなたに語ったすべてのことを、あなたは書き記した。今度は座って、人の魂について、まだ生まれていない者たちのことも含めてすべて書き記せ。また彼らのためにとこしえに備えられた場所についても。</p>
+<p><span class="v">五</span>なぜなら、すべての魂は、世界の基が置かれる前から、とこしえのものとして創造されたからである。」</p>
+<p><span class="v">六</span>私は三十日三十夜にわたって、絶え間なくすべてを書き出し、すべてを正確に書き写し、三百六十六の書物を書き記した。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。五節の「魂の先在」思想は、フィロンの著作やヨセフスが伝えるエッセネ派の教説に見られるプラトン的な魂論がユダヤ教思想に取り込まれた例として、チャールズが詳しい比較を加えている箇所である。六節の「三百六十六の書物」という数（写本Bでは三百六十）は、本外典が「エノクの秘密の書」と呼ばれる所以であり、後代のラテン語文献『ヨハネの外典黙示録』にも影響を残した（チャールズ注）。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c24">第二十四章</h2>
+<p class="subtitle">神がエノクに大いなる秘密を明かし、顔と顔とを合わせて語られたこと</p>
+<p><span class="v">一</span>主は私をお呼びになり、私に言われた。「エノクよ、ガブリエルとともに、私の左手に座れ。」私は主にひれ伏した。</p>
+<p><span class="v">二</span>主は私に語られた。「エノクよ、あなたが静止しているのと動いているのとで見ているものは、私によって完成されたものである。私は今、あなたに、初めから語ろう。私が何を、存在しないものから創造し、見えるものを何から、見えないものから造ったかを。</p>
+<p><span class="v">三</span>わが天使たちにさえ、私はわが秘密を語ったことがなく、彼らにその起源を知らせたこともなく、彼らは、今日あなたに語る、わが無限の創造を理解していない。</p>
+<p><span class="v">四</span>なぜなら、見えるものが何ひとつ存在する前、私はただひとり、見えないものの中を、東から西へ、また西から東へと進む太陽のように、わが道を歩んでいたからである。</p>
+<p><span class="v">五</span>しかし、太陽でさえ自らのうちに休みを持つが、私は休みを見出さなかった。なぜなら、私はすべてを創造していたからである。そして私は、基を据え、見える創造をなすことを計画した。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章から第三十三章にかけて、神御自身がエノクに創造の秘密を直接語り明かすという、本外典の中でも最も特異かつ神学的に重要な部分が展開される。二節の「存在しないものからの創造」（creatio ex nihilo）は、後代のヘブル人への手紙十一章三節に通じる思想であり、フィロンの流出論的な世界形成論とは一線を画す教説として、チャールズが詳しく論じている。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c25">第二十五章</h2>
+<p class="subtitle">神が最も深き闇より、見えるものと見えないものとを出現させられたこと</p>
+<p><span class="v">一</span>私は深みに、見えるものが見えないものから出て来るよう命じた。すると、非常に大いなるアドイルが出て来た。私は彼を見つめた。見よ、彼の色は赤く、大いなる輝きを持っていた。</p>
+<p><span class="v">二</span>私は彼に言った。「アドイルよ、はじけ散れ。あなたから出て来るものが、見えるものとなるように。」</p>
+<p><span class="v">三</span>彼ははじけ散り、大いなる光が出て来た。私は大いなる光のただ中にいた。そして光から光が出て来たように、大いなる世界が出て来て、私が造ろうと意図したすべての創造を現した。私はそれを見て、良しとした。</p>
+<p><span class="v">四</span>私は自らのために御座を造り、その上に座した。そして光に言った。「高きところへ行け。私の御座の上に据え置かれ、高きにあるもののための基となれ。」</p>
+<p><span class="v">五</span>光よりも高いものは何もなかった。私は身を横たえながら、これを御座から眺めた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。一節の「アドイル」は他の文献に例を見ない固有名で、チャールズはこの章と次章（第二十六章）の記述全体を、宇宙が原初の卵から生じるとするエジプト神話の宇宙論の翻案とみなしている。四節の「わが御座を光の上に据える」という発想は、七十人訳箴言八章二十七節の知恵の先在の記述と関連づけられる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c26">第二十六章</h2>
+<p class="subtitle">神が再び深みより呼ばれ、アルカスが現れたこと</p>
+<p><span class="v">一</span>私は再び深みより呼び、言った。「見える堅きものが、見えないものから出て来るように。」すると、アルカスが、堅く、重く、非常に赤い姿で出て来た。</p>
+<p><span class="v">二</span>私は言った。「アルカスよ、あなたは分かたれよ。あなたから生み出されるものが見えるようになれ。」彼が分かたれると、非常に暗く大いなる世界が出て来て、下にあるすべてのものの創造をもたらした。</p>
+<p><span class="v">三</span>私はこれを見て、良しとした。私は彼に言った。「あなたは下へ行き、据え置かれよ。下にあるもののための基となれ。」そのようになった。それは出て来て据え置かれ、下にあるもののための基となった。そして闇の下には他に何もなかった。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。「アルカス」もアドイル同様、他の文献に例のない固有名であり、チャールズはヘブライ語アレツ（地）またはギリシア語アルケー（始原）に由来する可能性を示唆している。前章のアドイル（光・天の創造）と対をなす、地の創造を担う存在として描かれている。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c27">第二十七章</h2>
+<p class="subtitle">神が水を確立し、これを光で囲み、その上に七つの島を据えられたこと</p>
+<p><span class="v">一</span>私は、光と闇との間に分離があるように命じ、言った。「密なる実体があるように。」そのようになった。</p>
+<p><span class="v">二</span>私はこれを広げ、水があった。私はこれを、光の下、闇の上に広げた。</p>
+<p><span class="v">三</span>こうして私は水、すなわち深みを固め、水を光で囲み、七つの軌道を創造し、それらを、湿ったものと乾いたもの、すなわちガラスと氷のように、水晶のごとく形づくった。そして水についても、また他の元素についても、私はそれぞれに、その進むべき道を示した。すなわち七つの星に、それぞれその天において、どのように進むべきかを示した。私はこれを見て、良しとした。</p>
+<p><span class="v">四</span>私は光と闇との間を、すなわちこちらの水とあちらの水との間を分けた。そして光に言った。「昼となれ。」闇に言った。「夜となれ。」こうして夕べと朝とがあり、第一日であった。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える（写本Bはこれ以降の記述を欠く）。三節の「七つの軌道」と七つの星の記述は、フィロン『世界の創造について』三十八節に見える、天が七つの軌道に分かたれるという発想と類似する。一〜四節全体は創世記一章六〜八節を敷衍したものである。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c28">第二十八章</h2>
+<p class="subtitle">第二日の創造について</p>
+<p><span class="v">一</span>こうして私は諸天の軌道を固め、天の下にある下の水が一つの場所に集められ、波が干上がるようにした。そのようになった。</p>
+<p><span class="v">二</span>波から、私は堅く大いなる石を造り、その石から乾いた実体を積み上げ、その乾いた実体を地と呼んだ。</p>
+<p><span class="v">三</span>地の真ん中に、私は穴、すなわち深淵を定めた。</p>
+<p><span class="v">四</span>私は海を一つの場所に集め、これをくびきをもって抑えた。そして海に言った。「見よ、私はあなたにとこしえの分を与える。あなたは定められた場所から動いてはならない。」こうして私は大空を固め、これを水の上に据え置いた。</p>
+<p><span class="v">五</span>私はこれを創造の日々のうちに数えた。こうして夕べがあり、また朝があった。第二日である。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。編者チャールズは本章五節が本来の順序では前章群（第二十五〜二十七章、第二十九章）に続く「第二日」の結びとして位置すべきものであり、現伝の章配列（第二十八章として第二十七章の後、かつ第二十九章の前に置かれる配置）は写本の伝承過程で乱れたものと推定している。内容自体は創世記一章九〜十節を敷衍したものである。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c29">第二十九章</h2>
+<p class="subtitle">サタナイルが、その天使たちとともに高きところより投げ落とされたこと</p>
+<p><span class="v">一</span>天のすべての軍勢のために、私は火のような性質を形づくった。わが目は、非常に堅く硬い石を見つめた。わが目の輝きから、稲妻はその不思議な性質を受けた。</p>
+<p><span class="v">二</span>火は水のうちにあり、水は火のうちにあるが、一方が他方によって消されることも、乾かされることもない。これゆえに、稲妻は太陽よりも明るく、柔らかな水は硬い石よりも強い。</p>
+<p><span class="v">三</span>私は石から力強い火を切り出した。その火から、私は霊的な軍勢の隊列、一万の天使たちを造った。彼らの武具は火のようであり、その衣は燃える炎である。私は彼らに、それぞれの隊列に立つよう命じた。</p>
+<p><span class="v">四</span>これら大天使の隊列のひとりが、自分より下の隊列とともに背き、あり得ない考えを抱いた。すなわち、地の上の雲よりも高く自らの御座を据え、わが力と同等の位になろうというのである。</p>
+<p><span class="v">五</span>私は彼を、その天使たちとともに、高きところから投げ落とした。彼は絶えず、深淵の上の大気の中を飛び続けている。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。編者チャールズは、本章が本来、第二十七章と第二十八章五節との間、すなわち「創造の第一日」の記述の一部として位置すべきものであったと推定している（ヨベル書二章二節等、天使の創造を第一日のこととする伝承との整合性から）。四〜五節で語られる「大天使のひとり」は、第七章・第十八章・第三十一章で名指される堕天使の首領サタナイル（サタン）の堕落の経緯そのものである。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c30">第三十章</h2>
+<p class="subtitle">神が六日間にわたり天地を創造されたこと、人の創造について</p>
+<p><span class="v">一</span>こうして私はすべての天を創造した。それは第三日であった。第三日に、私は地に、実を結ぶ大いなる木々、山々、あらゆる種類の草木、蒔かれるあらゆる種を生じさせるよう命じ、パラダイスを植えて、これを囲い、武装した火の天使たちを置いた。こうして私は新しくすることをなした。</p>
+<p><span class="v">二</span>こうして夕べがあり、朝があった。第四日である。第四日に、私は諸天の軌道に大いなる光があるように命じた。</p>
+<p><span class="v">三</span>第一の、最も高い軌道には星クロノスを置き、第二にはアプロディテを、第三にはアレスを、第四には太陽を、第五にはゼウスを、第六にはヘルメスを、第七には月を置いた。</p>
+<p><span class="v">四</span>そして、より低き大気を、より小さな星々をもって飾った。</p>
+<p><span class="v">五</span>私は太陽を昼を照らすために、月と星々を夜を照らすために置いた。太陽は黄道十二宮のそれぞれの宮に従って進み、月もまた黄道十二宮を巡って行く。</p>
+<p><span class="v">六</span>私はそれらの名と存在、雷鳴、また時刻の巡りがいかに起こるかを定めた。</p>
+<p><span class="v">七</span>こうして夕べがあり、朝があった。第五日である。第五日に、私は海に、魚と、あらゆる種類の翼ある鳥、地を這うすべてのもの、地を歩む四つ足のもの、空を飛ぶものを、雄と雌とをもって生じさせるよう命じ、息をして生きるすべてのものを生じさせた。</p>
+<p><span class="v">八</span>こうして夕べがあり、朝があった。第六日である。第六日に、私は、わが知恵に命じて、七つの実質から人を造らせた。（一）その肉は地から。（二）その血は露から。（三）その目は太陽から。（四）その骨は石から。（五）その思いは天使たちの敏捷さと雲から。（六）その血管と髪は地の草から。（七）その霊はわが霊と風から。</p>
+<p><span class="v">九</span>私は彼に七つの性質を与えた。その体には聴くこと、その目には見ること、知覚には嗅ぐこと、血管には触れること、血には味わうこと、骨には耐えること、思いには甘美さを。</p>
+<p><span class="v">十</span>私はある精妙なことを意図した。見えない性質と見える性質とから、私は人を造った。その両方から、彼の死と生と、その姿とがある。そして言葉は業のごとくであり、大いなることのうちにあって小さく、また小さなことのうちにあって大いなるものであった。</p>
+<p><span class="v">十一</span>私は彼を地の上に、第二の天使のごとく、名誉ある、大いなる、栄光に満ちた仕方で置いた。</p>
+<p><span class="v">十二</span>私は彼を、地を治める支配者とし、わが知恵を持つ者とした。私の創造したもののうち、地上に彼に似たものは誰もなかった。</p>
+<p><span class="v">十三</span>私は彼に、東・西・北・南という四つの要素から名を与えた。そして私は彼にアダムという名を与えた。</p>
+<p><span class="v">十四</span>私は彼のために四つの特別な星を定め、彼にその意志を与えた。</p>
+<p><span class="v">十五</span>私は彼に、光と闇という二つの道を示した。そして私は彼に言った。「これは善であり、これは悪である」と。それは、彼が私を愛するのか憎むのかを私が知るためであり、彼がその子孫のうちに、私を愛する者として現れるためであった。</p>
+<p><span class="v">十六</span>私は彼の本性を知っていたが、彼は自らの本性を知らなかった。それゆえ、彼の無知は、彼が罪を犯すに至る災いとなった。私は彼の罪のゆえに死を定めた。</p>
+<p><span class="v">十七</span>私は彼を眠らせ、彼はまどろんだ。私は彼から肋骨を取り、彼のために妻を造った。</p>
+<p><span class="v">十八</span>彼の妻によって死が来た。そして私は彼の最後の言葉を受け取った。私は彼女に名を与えた。母、すなわちエバという名である。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。八節の「七つの実質からの人の創造」は本書の中でも特に学術的関心を集めてきた箇所で、フィロンやストア派の人間論との類似が指摘されている（チャールズ注）。十三節の「アダム」という名が東西南北（ギリシア語でἀνατολή・δύσις・ἄρκτος・μεσημβρία）の頭文字に由来するという語源俗解は、シビュラの神託三巻二十四〜二十六行にも見られる古い伝承である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c31">第三十一章</h2>
+<p class="subtitle">神がアダムにパラダイスと知識とを与え、悪魔がエバを欺いたこと</p>
+<p><span class="v">一</span>アダムは地上に生を得た……そして私はエデンに、東の方に園を造り、彼が律法を守り、教えを保つように定めた。</p>
+<p><span class="v">二</span>私は彼のために天を開き、天使たちが勝利の歌をうたうのを彼が知覚できるようにした。そしてパラダイスには、闇のない光が絶えることなくあった。</p>
+<p><span class="v">三</span>すると悪魔は、あたかも別の世界を造ろうとするかのように考えを巡らせた。それは、地上にあるものがアダムに従い、彼がこれを治め、支配する立場にあったためである。</p>
+<p><span class="v">四</span>悪魔は最も低き場所の悪しき霊となるべき者であった。彼は天を離れた後にサタンとなった。彼の名は以前はサタナイルであった。</p>
+<p><span class="v">五</span>こうして、彼はその本性において天使たちとは異なる者となったが、正しい思いと罪深い思いとについての理解を変えることはなかった。彼は自分に下された裁きと、自らが以前犯した罪とを理解していた。</p>
+<p><span class="v">六</span>これゆえに、彼はアダムに対して謀をめぐらした。このようにして彼は入り込み、エバを欺いた。しかし彼はアダムには触れなかった。</p>
+<p><span class="v">七</span>しかし私は、彼の無知のゆえに彼を呪った。だが、私が以前に祝福した者たちを、私は呪わなかった。</p>
+<p><span class="v">八</span>私は人を呪わず、地を呪わず、造られた他の何ものをも呪わなかった。ただ人の悪しき実、そしてその行いを呪った。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える（写本Bは本章全体を欠く）。四節でサタンの本来の名として明示される「サタナイル」は、第七章・第十八章・第二十九章で語られてきた堕天使の首領の物語の帰結にあたる。五〜六節の、悪魔がアダムには触れずエバのみを欺いたという記述は、創世記三章の記述に本書独自の解釈を加えたものである。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c32">第三十二章</h2>
+<p class="subtitle">アダムの罪のゆえに、神が彼を地に送り返されたこと</p>
+<p><span class="v">一</span>私は彼に言った。「あなたは土であり、あなたを取った土へと、あなたは帰るであろう。私はあなたを滅ぼさず、あなたを取ったところへ送り返す。そうすれば、私の再臨のときに、あなたを再び取ることもできるのだから。」そして私は、見えるものと見えないものと、わが創造したすべてを祝福した。</p>
+<p><span class="v">二</span>そして私は第七日を祝福した。これは安息日であり、この日に私はすべての労苦から休んだ。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える（写本Bは本章全体を欠く）。一節の「私の再臨」（My second coming）という表現は、終末における神の到来を指すもので、本書四十二章五節にも同様の言及がある。写本Aはこの章に「アダムはパラダイスに五時間半いた」という一文を加えるが、他写本にはない。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c33">第三十三章</h2>
+<p class="subtitle">神がエノクに、この世の存続期間が七千年であり、第八千年紀が終わりであることを示されたこと</p>
+<p><span class="v">一</span>そして私はまた、第八日を定めた。第八の日を、わが業の後の最初の日とし、日々を七千の似姿に従わせよ。</p>
+<p><span class="v">二</span>第八千年紀の初めには、計算もなく、終わりもない時があるように。年もなく、月もなく、週もなく、日もなく、時もない。</p>
+<p><span class="v">三</span>さて、エノクよ、私があなたに語ったこと、あなたが理解したこと、あなたが天で見たこと、あなたが地上で見たこと、あなたが書物に書き記したこと、これらすべてのことを、私はわが知恵によって、これらを創造するために案出し、最も高い基から最も低いところまで、また終わりに至るまで、これらを造った。</p>
+<p><span class="v">四</span>わが業には助言者もなく、相続者もない。私はとこしえの者、手をもって造られたのではない者である。わが思いは変わることなく、わが知恵はわが助言者であり、わが言葉は現実である。わが目はすべてを見る。もし私がすべてのものに目を向けるなら、それらは確かに立つ。もし私が御顔をそむけるなら、すべては私を必要とする。</p>
+<p><span class="v">五</span>さて、エノクよ、心して聞け。誰があなたに語っているのかを知り、あなた自身が書き記した書物を受け取れ。</p>
+<p><span class="v">六</span>私はあなたを私のもとへ連れて来たサムイルとラグイルとを、あなたに与える。彼らとともに地上へ行き、私があなたに語ったこと、また最も低い天から私の御座に至るまであなたが見たことを、あなたの息子たちに告げよ。</p>
+<p><span class="v">七</span>私はすべての軍勢とすべての権能とを創造した。私に逆らう者も、私に従わない者もいない。すべては、わがただ一つの力に従い、わが支配のためにのみ働くからである。</p>
+<p><span class="v">八</span>あなたが書き記した業を彼らに与えよ。彼らはこれを読み、私がすべての造り主であることを知り、私のほかに神はいないことを悟るであろう。</p>
+<p><span class="v">九</span>彼らは、あなたの書き記した書物を、子から子へ、世代から世代へ、国から国へと分け伝えるであろう。</p>
+<p><span class="v">十</span>エノクよ、私はあなたに、わが使者、大いなる隊長ミカエルを、あなたの書き記したもの、また、あなたの父祖たち——アダム、セツ、エノス、カイナン、マラレエル、そしてあなたの父ヤレドの書き記したもの——のために与える。</p>
+<p><span class="v">十一</span>私はそれらを終わりの時代まで求めない。私はわが二人の天使、アリウクとパリウクとに、地上でそれらの守護者となるよう命じたからである。</p>
+<p><span class="v">十二</span>私は彼らに、来るべき洪水のうちに、私があなたの家系においてなすことの記録が失われることのないよう、時に応じてこれらを守るよう命じた。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。一〜二節の「一日は千年」（第八千年紀）という宇宙年代論は、詩篇九十篇四節（「あなたの目には、千年も、過ぎ去ればきのうのようです」）を敷衍したもので、後代のバルナバの手紙十五章や教父イレナイオスにも影響を残した重要な教説史料である（チャールズ注）。六節のサムイルとラグイルは、エノクを天へ導いた「この人たち」の名として初めて明かされる。十一節のアリウクとパリウクは、他の文献に例のない固有名である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c34">第三十四章</h2>
+<p class="subtitle">神が偶像礼拝の者たちとソドムの民のような悪をなす者たちを告発し、これゆえに洪水をもたらされること</p>
+<p><span class="v">一</span>私は人々の悪しきことを知っている。彼らは私が課したくびきを負わず、私が与えた種を蒔かず、わがくびきを投げ捨てて別のものを受け入れ、空しい種を蒔き、空しい神々にひれ伏し、ただひとりの神である私を否むであろう。</p>
+<p><span class="v">二</span>彼らは全世界を悪と不義とで満たし、互いに汚れた不潔なこと、ソドムの行い、そしてその他のあらゆる不潔な行い——口にするのも汚らわしいこと——をもって満たすであろう。</p>
+<p><span class="v">三</span>これゆえに、私は地の上に洪水をもたらし、すべてを滅ぼすであろう。そして地は大いなる腐敗のうちに滅びるであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章から物語は、エノクが天から地上へ帰還する前に神から告げられる将来の予告（大洪水、そして次章で語られるノアの家系の存続）へと移る。二節の「ソドムの行い」は第十章四節と同じ語彙で、地上の悪の代表例として繰り返し用いられている。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c35">第三十五章</h2>
+<p class="subtitle">神が、エノクの家系からひとりの義人を残されること</p>
+<p><span class="v">一</span>私は、あなたの家系からひとりの義人を、わが御心のままに行うその一家すべてとともに残すであろう。彼らの子孫からは、しばらくのちに、数多くの世代が興されるが、そのうちの多くの者は、非常に貪欲な者たちとなるであろう。</p>
+<p><span class="v">二</span>それから、その家系が絶える頃、私は彼らに、あなたの書物と、あなたの父祖たちの書物とを示すであろう。地上でこれらを守護する者たちは、真実な人々、すなわち、わが名をみだりに唱えず、私を喜ばせる人々に、これらを示すであろう。</p>
+<p><span class="v">三</span>彼らはこれを別の世代に伝え、これを読んだ者たちは、ついには以前にも増して栄光を受けるであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。一節の「ひとりの義人」はノアを指すとチャールズは注記する。二節の「その家系が絶える頃」は、第一エノク書九十三章九〜十節・九十一章十二節に見られる「剣の時代」（義人が迫害される終末的な期間）と同様の文脈で、エノクの書物が義人たちに開示される時とを結びつける記述である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c36">第三十六章</h2>
+<p class="subtitle">神がエノクに、子らを教えるため地上に三十日とどまるよう命じられたこと</p>
+<p><span class="v">一</span>さて、エノクよ、私はあなたに、あなたの家で務めを果たすため、三十日の期間を与える。あなたの息子たちと、あなたのすべての家の者たちに、私の御前で告げよ。彼らが、あなたによって語られることに耳を傾け、私のほかに神はいないことを読み、理解するために。また、彼らが常にわが戒めを守り、あなたが書き記した書物を読み、理解し始めるために。</p>
+<p><span class="v">二</span>三十日の後、私はあなたのために、わが天使たちを遣わす。彼らは、わが御心のままに、あなたを地から、あなたの息子たちのもとから連れ去るであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。エノクに与えられる三十日という期間は、第一エノク書八十一章六節の類似の場面（そこでは一年とされる）と対応するが、期間の長さは異なる。本章から、物語はエノクの地上への帰還と、子らへの訓戒の場面へと移る。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c37">第三十七章</h2>
+<p class="subtitle">神がひとりの天使を呼ばれたこと</p>
+<p><span class="v">一</span>神は、その最も大いなる天使たちのひとり、恐ろしく畏るべき者をお呼びになり、彼を私のかたわらに置かれた。その天使の姿は雪のようであり、その手は氷のようであった。彼は非常に冷たい姿をしており、私の顔は冷え切った。それは、私が主の畏れに耐えることができなかったからである。ちょうど、太陽の激しい火と熱、また大気の霜に耐えることができないのと同じである。</p>
+<p><span class="v">二</span>主は私に言われた。「エノクよ、もしここであなたの顔が冷やされないなら、誰もあなたの顔を見ることができないであろう。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える（写本Bは本章全体を欠く）。地上へ戻るエノクの顔が天上の栄光ゆえに人には見るに耐えないものとなっており、それを和らげるためにこの氷のような天使が遣わされるという発想である。出エジプト記三十四章二十九節以下、シナイ山から降りたモーセの顔が光を放ち、民が恐れて近寄れなかった場面との類似が指摘される。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c38">第三十八章</h2>
+<p class="subtitle">メトシェラが昼も夜も、父エノクの床のかたわらで待ち望んだこと</p>
+<p><span class="v">一</span>主は、最初に私を連れて行ったあの人たちに言われた。「エノクをあなたがたとともに地へ連れて行き、定められた日まで彼を待て。」</p>
+<p><span class="v">二</span>夜になって、彼らは私を私の床の上に置いた。メトシェラは、昼も夜も私の帰りを待ちながら、私の床のかたわらで見張りをしていた。</p>
+<p><span class="v">三</span>彼は、私の帰りを聞いて恐れおののいた。私は彼に、私の家のすべての者たちが来るように指示を与えた。私がすべてのことを彼らに告げるためであった。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える（写本Bは本章全体を欠く）。「メトシェラ」の表記は第一章の用語対照表の方針に従う。本章は第一章で描かれた昇天の場面と対をなす、エノクの地上への帰還の場面である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c39">第三十九章</h2>
+<p class="subtitle">エノクが、涙と深い悲しみとをもって子らに悲痛な訓戒を語ったこと</p>
+<p><span class="v">一</span>わが子らよ、聞け、主の御心に従うこととは何であるかを。私は今日、あなたがたに、主の御口から、かつてあったこと、今起こっていること、そして裁きの日の前に起こるであろうことを告げるために遣わされた。</p>
+<p><span class="v">二</span>わが子らよ、聞け。私は今日、私自身の口からあなたがたに語っているのではなく、私をあなたがたに遣わされた主の御口から語っているのである。あなたがたが聞いているのは、あなたがたと同じ死すべき人間である私の口の言葉である。</p>
+<p><span class="v">三</span>しかし私は、火の中で熱せられ、取り出されると火花を発して燃える鉄のような、主の御顔を見た。</p>
+<p><span class="v">四</span>あなたがたのためにしるしを負う者、この私の目を見よ。私は、太陽の光線のように輝き、人の目を恐怖で打つ、主の御目を見た。</p>
+<p><span class="v">五</span>わが子らよ、あなたがたは、あなたがたと同じように造られた人の右手が、あなたがたを助けるのを見ている。私は、私を助け、天を満たす主の右手を見た。</p>
+<p><span class="v">六</span>あなたがたは、あなたがた自身と同じような、私の行いの及ぶ範囲を見ている。私は、測り知れず、調和に満ちた主の御姿を見た。主には終わりがない。</p>
+<p><span class="v">七</span>こうしてあなたがたは私の口の言葉を聞いているが、私は、絶え間なく雲を揺り動かす大いなる雷のような、主の御言葉を聞いた。</p>
+<p><span class="v">八</span>さて、わが子らよ、あなたがたの地上の父の語ることに耳を傾けよ。地上の君主の御顔の前に立つことは恐ろしく畏るべきことである——恐ろしく、非常に畏るべきことである。なぜなら、君主の意志は死であり、また君主の意志は生であるからだ。まして、主なる主、地と天の万軍の主の御顔の前に立つことは、どれほど恐ろしく畏るべきことであろうか。誰がこの終わりなき恐怖に耐えられようか。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える。本章から地上に戻ったエノクによる子らへの訓戒（第六十六章まで）が始まる。三節の「火の中で熱せられた鉄のような主の御顔」という表現は、第二十二章一節でエノク自身が天で見た主の御顔の描写と全く同じ言葉遣いであり、エノクが自ら体験したことをそのまま子らに証言している構成になっている。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c40">第四十章</h2>
+<p class="subtitle">エノクが子らに、自ら見て聞いて書き記したすべてのことを、主の御口から忠実に教えたこと</p>
+<p><span class="v">一</span>さて、わが子らよ、私は主の御口からすべてのことを知っている。私の目は初めから終わりまでを見たからである。</p>
+<p><span class="v">二</span>私はすべてのことを知り、書物にすべてのことを書き記した。天とその果て、その満ちるもの、すべての軍勢についても。私はその運行を測り、星々とその数え切れないほどの数とを書き記した。</p>
+<p><span class="v">三</span>どの人間が、それらの交代と運行とを見たであろうか。天使たちでさえその数を知らない。私はそのすべての名を書き記した。</p>
+<p><span class="v">四</span>私は太陽の軌道を測り、その光線を測った。そのすべての月における出入りと、そのすべての行程と、その名とを私は書き記した。</p>
+<p><span class="v">五</span>私は月の軌道を測り、日ごとに起こるその欠けと、日ごとに身を隠し、すべての時刻に従って昇る秘められた場所とを測った。</p>
+<p><span class="v">六</span>私は四つの季節を定め、季節から四つの軌道を造り、軌道の中に年々を置いた。月々を置き、月々から日々を計算し、日々から時刻を計算した。</p>
+<p><span class="v">七</span>さらに、私は地の上を動くすべてのものを書き記した。養われるすべてのもの、蒔かれた種も蒔かれざる種も、地に生えるすべてのもの、園に属するすべてのもの、あらゆる草とあらゆる花、その香りとその名とを、私は書き記した。</p>
+<p><span class="v">八</span>雲の住まい、その形と翼、それらがいかにして雨と雨粒とをもたらすかについても、私はすべてを調べた。</p>
+<p><span class="v">九</span>私は雷と稲妻の行程を書き記した。彼らは私に鍵と、それらの守護者と、それらが通る道とを示した。それらは定められた度合いで縛られたまま連れ出され、縛られたまま放たれる。それは、その重い勢いと激しさとで、怒りの雲を過重にし、地のすべてを滅ぼすことがないようにするためである。</p>
+<p><span class="v">十</span>私は雪の蔵、雹の貯蔵所、涼しい風とを書き記した。私は、季節ごとにそれらの鍵を持つ者を観察した。彼がいかにしてそれらを雲に満たし、それでいてその蔵を使い果たさないかを。</p>
+<p><span class="v">十一</span>私は風の住まいを書き記した。そして、その鍵を持つ者たちが天秤と升目とを携えているのを観察し、見た。彼らはまず初めにそれらを天秤にかけ、次に、全地にわたって、その重い息吹が全地を揺るがすことのないよう、注意深く、程よい加減で放つ。</p>
+<p><span class="v">十二</span>私は全地を測った。その山々、すべての丘、野、木々、石、川を。存在するすべてのものを私は書き記した。地から第七の天までの高さ、そして最も低い地獄までの深さを。裁きの場所、開かれた力強い地獄、嘆きに満ちたその場所を。私は、囚人たちが測り知れない裁きを待ちながら苦しんでいるのを見た。</p>
+<p><span class="v">十三</span>私は、裁き主によって裁かれるすべての者たちと、彼らが受けるすべての裁きと、そのすべての行いとを書き出した。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。十二節で「第七の天」までの高さと「最も低い地獄」への深さが並置される点について、チャールズは、地獄を第三の天に置く本書の一貫した体系（第十章参照）と、地下に地獄を置く古いユダヤ的観念とが、本章では整合しないまま併存していると指摘している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c41">第四十一章</h2>
+<p class="subtitle">エノクがアダムの罪のために泣いたこと</p>
+<p><span class="v">一</span>私は、アダムとエバをはじめとする、われらの父祖たちすべてを、その初めから見た。私はため息をつき、泣き、彼らの悪しき行いがもたらした破滅について語った。「ああ、私の弱さと、わが父祖たちの弱さのゆえに、私は災いだ。」</p>
+<p><span class="v">二</span>私は心のうちに思いめぐらして言った。「生まれなかった者、あるいは、生まれたとしても主の御顔の前で決して罪を犯さなかった者は幸いである。彼はこの場所に来て、この場所のくびきを負うことがないからだ。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Bのみに見える。本章は、天における幻視の記憶がエノクの訓戒の語りの中に差し込まれる場面であり、アダムをはじめとする父祖たちが（第十章で見た）裁きを待つ場所にいることが示唆されている。二節の「生まれなかった者は幸いである」という逆説的な言い回しは、第四エズラ書四章十二節にも見られる、後期ユダヤ黙示文学に特徴的な表現である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c42">第四十二章</h2>
+<p class="subtitle">エノクが、地獄の門の鍵を守る者たちを見たこと、および幸いなる者たちについて</p>
+<p><span class="v">一</span>私は、鍵を守り、地獄の門の守護者である者たちを見た。彼らは大蛇のように立ち、その顔は消えた灯火のようであり、その目は火のようであり、その歯は鋭かった。</p>
+<p><span class="v">二</span>私は彼らの前で言った。「私があなたがたを見ることなく、あなたがたの行いを聞くこともなく、わが同族の者たちがあなたがたのもとに来ることも決してなければよかったのに。彼らはこの世でわずかに罪を犯したにすぎないのに、とこしえの命において絶えず苦しむのか。」</p>
+<p><span class="v">三</span>私は東へ、エデンのパラダイスへと出て行った。そこには義人たちのために安息が備えられており、第三の天へと開かれ、この世からは閉ざされている。</p>
+<p><span class="v">四</span>太陽の東の非常に大いなる門には、見張りが置かれている。すなわち火の天使たちであり、勝利の歌をうたい、義人たちの前で喜ぶことを絶やさない。</p>
+<p><span class="v">五</span>最後の到来のとき、彼らはアダムをわれらの父祖たちとともに導き出し、そこへ連れて行くであろう。それは、人が愛する者たちを自分とともに宴に招くように、彼らが喜ぶためである。彼らは喜びをもって来て、その人の住まいの前で語らい、その宴、その楽しみ、測り知れない富、光の中での喜びと楽しみ、そしてとこしえの命を、喜びをもって待つ。</p>
+<p><span class="v">六</span>そこで私は言った。「わが子らに告げよう。主の御名を畏れ、絶えずその御顔の前に仕え、この世で絶えず畏れをもって捧げ物を携え、その生涯を正しく生き、（義しく）死ぬ者は幸いである。</p>
+<p><span class="v">七</span>正しい裁きを行う者、それも報いのためではなく、義のために行い、何の見返りも期待しない者は幸いである。後に、誠実な裁きが彼に臨むであろう。</p>
+<p><span class="v">八</span>裸の者に衣を着せ、飢えた者にパンを与える者は幸いである。</p>
+<p><span class="v">九</span>孤児とやもめのために正しい裁きを与え、不当な扱いを受けているすべての者を助ける者は幸いである。</p>
+<p><span class="v">十</span>この空しい世の不確かな道から離れ、とこしえの命へと導く正しい道を歩む者は幸いである。</p>
+<p><span class="v">十一</span>正しい種を蒔く者は幸いである。彼は七倍にして刈り取るであろう。</p>
+<p><span class="v">十二</span>内に真実を持ち、隣人に真実を語る者は幸いである。</p>
+<p><span class="v">十三</span>その唇に愛を持ち、その心に優しさを持つ者は幸いである。</p>
+<p><span class="v">十四</span>主のすべての御業を理解し、主なる神に栄光を帰する者は幸いである。主の御業は正しいが、人の業には善きものもあれば悪しきものもあり、その行いによって、それをなした者たちは知られる。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。六〜十四節に連なる一連の「幸いなる者は」（Blessed is he who...）という定型句は、マタイ福音書五章のいわゆる「山上の垂訓」の九つの祝福の型と類似する構造を持ち、旧約知恵文学（シラ書等）に遡る伝統的な倫理的定型表現である（チャールズ注）。三節の「第三の天へと開かれた」エデンのパラダイスは、第八章で描かれたパラダイスと同一の場所と考えられる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c43">第四十三章</h2>
+<p class="subtitle">エノクが子らに、自ら測り、書き記した神の裁きについて示したこと</p>
+<p><span class="v">一</span>見よ、わが子らよ、私が地上で得たこと、また主なる神から思いめぐらしたことを、私は書き記した。私はすべての記録をまとめ、年々について冬と夏との両方を書き記し、それぞれの時を計算した。私は時を測り、その一覧を書き出し、そのすべての違いを確かめた。</p>
+<p><span class="v">二</span>ある年が他の年よりも尊いように、ある人は他の人よりも尊い。ある人は多くの財産のゆえに、ある人は心の知恵のゆえに。ある人は理解力のゆえに、ある人は才知のゆえに。ある人は口数の少なさのゆえに。ある人は清さのゆえに、ある人は強さのゆえに。ある人は美しさのゆえに、ある人は若さのゆえに。ある人は頭の鋭さのゆえに、ある人は体の機敏さのゆえに、また別の人は多くのことを見分ける力のゆえに、尊い。</p>
+<p><span class="v">三</span>あらゆるところで聞かれるように。神を畏れる者よりも偉大な者はいない。彼はとこしえに最も栄光ある者となるであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。二節の人の尊さの列挙は、シラ書十章二十〜二十四節の類似の列挙（「兄弟たちのうちで指導者は誉れを受け、主を畏れる者はその目に誉れがある」等）に基づく敷衍とチャールズは指摘する。三節の結論「神を畏れる者よりも偉大な者はいない」は、まさにシラ書十章二十四節の直接的な引用に近い。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c44">第四十四章</h2>
+<p class="subtitle">エノクが子らに、人を、大いなる者も小さき者も、そしってはならないと教えたこと</p>
+<p><span class="v">一</span>神はご自身の御手をもって、その御顔の似姿に人を造られた。小さき者も大いなる者も、主はこれを創造された。人の顔をそしる者は、主の御顔をそしるのである。</p>
+<p><span class="v">二</span>危害を受けたわけでもないのに他人に怒りを向ける者、その者を、主の大いなる怒りが焼き尽くすであろう。</p>
+<p><span class="v">三</span>もし人が他人の顔に侮辱をもって唾を吐くなら、彼は主の大いなる裁きにおいて焼き尽くされるであろう。</p>
+<p><span class="v">四</span>誰に対しても悪意をもって心を向けず、傷つけられ、裁きのもとにある者を助け、虐げられた者を起こし、求める者の祈りをかなえる人は幸いである。</p>
+<p><span class="v">五</span>なぜなら、大いなる裁きの日には、取引のためのあらゆる量りと基準と重り、すなわち天秤にかけられ取引のために用いられるものは、それ自身の量りを知り、その量りに従って報いを受けるからである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える（写本Bは本章全体を欠く）。一節「人の顔をそしる者は、主の御顔をそしる」は、ヤコブの手紙三章九節（「主にかたどって造られた人をのろう」）と発想を共有する。チャールズは四節が本来、第四十二章末尾の「幸いなる者」の列挙に連なるべき一節であった可能性を指摘している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c45">第四十五章</h2>
+<p class="subtitle">神は人からの犠牲や焼き尽くす献げ物ではなく、清く悔いた心を求められること</p>
+<p><span class="v">一</span>主の御顔の前に急いで捧げ物を携えて来る者、その者のために、主はその業の達成を急がせ、正しい裁きを行われるであろう。</p>
+<p><span class="v">二</span>主の御顔の前でその灯火を増し加える者、その者のために、主は天の御国におけるその宝を大いに増し加えられる。</p>
+<p><span class="v">三</span>神はパンを求めず、灯火を求めず、動物を求めず、他のいかなる犠牲も求めない。それらは無に等しいからである。</p>
+<p><span class="v">四</span>しかし神は清い心を求められる。そして、これらすべての事柄によって、神は人の心を試される。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。三〜四節は、詩篇五十一篇十六〜十七節、イザヤ書一章十一節、ミカ書六章六〜八節に連なる、儀礼的な犠牲よりも清い心を重んじる預言者的伝統を明確に受け継ぐ一節である（チャールズ注）。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c46">第四十六章</h2>
+<p class="subtitle">地上の君主でさえ、卑しく汚れた贈り物を人から受け取らないこと。まして神は汚れた贈り物をなおのこと忌み嫌われること</p>
+<p><span class="v">一</span>わが民よ、聞け。私の口の言葉に耳を傾けよ。もし誰かが地上の君主に贈り物を携えて来ても、その心のうちに不誠実さを抱いているなら、君主がそれを知ったとき、そのことのために怒らないであろうか。彼はその贈り物を受け取らず、その者を有罪の判決に引き渡すのではないか。</p>
+<p><span class="v">二</span>あるいは、もし人がその言葉で他人にへつらいながら、心のうちにはその者に対する悪をたくらんでいるなら、相手はその心の企みを見抜かないであろうか。そして彼自身が有罪とされ、その不義がすべての者に明らかになるのではないか。</p>
+<p><span class="v">三</span>しかし神が大いなる光を送られるとき、それによって義人にも不義な者にも裁きがなされ、何ひとつ隠されたままではいられない。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える（写本Bは本章全体を欠く）。原文では節番号が一・二・四と付され、三が欠けている。本訳では原文の内容の切れ目に従い、便宜上一〜三節として通し番号を振り直した。地上の君主にたとえて神の裁きを語る論法は、第三十九章八節の同様の比較法と対応している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c47">第四十七章</h2>
+<p class="subtitle">エノクが、神の御口から出た教えを子らに語り、この書物の写本を彼らに与えたこと</p>
+<p><span class="v">一</span>さて、わが子らよ、私の思いをあなたがたの心に置け。あなたがたの父の言葉、すなわち主の御口からあなたがたに来た言葉に、耳を傾けよ。</p>
+<p><span class="v">二</span>あなたがたの父の書き記したこれらの書物を受け取り、これを読め。これらのうちに、あなたがたは主のすべての御業を学ぶであろう。創造の初めから世の終わりに至るまで、多くの書物があったし、これからもあるだろうが、私の書物のように、あなたがたに物事を知らせるものはない。</p>
+<p><span class="v">三</span>しかし、もしあなたがたが私の書き記したものを保つならば、あなたがたは神に対して罪を犯すことはないであろう。主のほかには、天にも地にも、下の深みにも、孤立した基にも、他の何ものもいないからである。</p>
+<p><span class="v">四</span>神は知られていないものの上に基を据え、見える天と見えない天とを広げ、水の上に地を固め、定まらないものの上に水を据えられた。誰が創造のこの数え切れない業のすべてを造ったであろうか。</p>
+<p><span class="v">五</span>誰が地の塵と、海の砂と、雨のしずくと、朝の露と、風の息とを数えたであろうか。誰が地と海とを、断ち切ることのできない絆で結び、火から星々を切り出し、天を美しく飾り、太陽をその中央に置いて……</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。五節は原文でも文が完結せず、次章（第四十八章）の太陽の運行の記述へと直接続いていく。五節前半「地の塵と海の砂と雨のしずくとを誰が数えたか」は、シラ書一章二節（「海の砂、雨のしずく……誰が数えることができようか」）からの、ほぼ逐語的な引用である（チャールズ注）。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c48">第四十八章</h2>
+<p class="subtitle">太陽が七つの軌道を巡ることについて</p>
+<p><span class="v">一</span>太陽は諸天の七つの軌道を巡る。私は彼に、短い日を行くとき百八十二の座を、長い日を行くときにもまた百八十二の座を与えた。</p>
+<p><span class="v">二</span>また彼には、それぞれの月の座の上を、あちらこちらへと戻りながら休む、二つの大いなる座がある。ツィヴァンの月から十七日を経て、彼はテヴァンの月へと下り、テヴァンの十七日目から昇る。</p>
+<p><span class="v">三</span>こうして太陽は天のすべての道を巡る。彼が地に近づくとき、地は喜び、その実りを生じる。彼が去るとき、地は悲しみ、木々とすべての実りは育つことがない。</p>
+<p><span class="v">四</span>これらすべてを、神はその知恵によって、量りと時の緻密な配置とをもって整えられた。見えるものについても、見えないものについても。</p>
+<p><span class="v">五</span>神は、ご自身は見えない方でありながら、見えないものから見えるすべてのものを造られた。</p>
+<p><span class="v">六</span>こうして私はあなたがたに告げる。わが子らよ、この書物をあなたがたの子らに、あなたがたのすべての家族のうちに、また諸国民のうちに分け伝えよ。</p>
+<p><span class="v">七</span>知恵ある者たちは神を畏れ、これを受け取り、いかなる食物にもまさってこれを愛し、これを読め。</p>
+<p><span class="v">八</span>しかし、思慮なく、主のことを思わず、神を畏れない者たちは、これを受け取らず、背を向け、これから身を遠ざけるであろう。恐ろしい裁きが彼らを待ち受けている。</p>
+<p><span class="v">九</span>そのくびきを負い、これを身に着ける人は幸いである。彼は大いなる裁きの日に自由にされるであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない（写本Bは本章全体を欠く）。一〜二節の月名「ツィヴァン」「テヴァン」はバビロニア暦・ユダヤ暦に由来する月名（シヴァン月・テベット月）だが、底本自体が破損しており、正確な対応関係は不明である（チャールズ注）。九節までで、第三十三章以来続いてきたエノクの書物の重要性についての訓戒がひとまず結ばれる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c49">第四十九章</h2>
+<p class="subtitle">エノクが子らに、天によっても地によっても誓ってはならないと教え、母の胎にいるうちから神が人に約束を与えられることを示したこと</p>
+<p><span class="v">一</span>わが子らよ、私はあなたがたに誓う。しかし私は、天によっても、地によっても、神が造られた他のいかなる被造物によっても、決して誓わない。神は言われた。「私のうちには誓いも不義もなく、ただ真実のみがある。もし人々のうちに真実がないなら、彼らは言葉によって、然り、然り、あるいは否、否と誓うがよい。」</p>
+<p><span class="v">二</span>しかし私は、然り、然りとあなたがたに誓う。母の胎にある人でさえ、そのすべての魂のために場所が備えられていない者は誰もいない。また、人がこの世でどれほど長く試されるかについても、量りが定められている。おお、わが子らよ、欺かれてはならない。そこには、人のすべての魂のために場所が備えられているのである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。一節の「天によっても地によっても誓うな」という教えは、マタイ福音書五章三十四〜三十五節のイエスの教え（「一切誓ってはならない。天をさして誓うな……地をさして誓うな」）と驚くほど一致しており、フィロンの著作にも同様の教えが見られることから、これがユダヤ教における一般的な教説であったことをチャールズは指摘している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c50">第五十章</h2>
+<p class="subtitle">地に生まれた者は誰も身を隠すことができず、その行いも隠されないこと。しばらくの間、地上で誘惑と苦難とに耐え、やもめと孤児を害してはならないこと</p>
+<p><span class="v">一</span>私はすべての人の行いを書物に記した。地に生まれた者は誰も、身を隠すことはできず、その行いも隠すことはできない。私はすべてを見ている。</p>
+<p><span class="v">二</span>それゆえ今、わが子らよ、忍耐と柔和とをもって、あなたがたの日数を全うせよ。そうすれば、あなたがたは来るべき果てしない命を受け継ぐであろう。</p>
+<p><span class="v">三</span>あらゆる傷、あらゆる苦難、あらゆる悪しき言葉、そして攻撃を、主のために耐え忍べ。</p>
+<p><span class="v">四</span>あなたがたが復讐できるときにも、隣人にであれ敵にであれ、報復してはならない。神が大いなる裁きの日に、あなたがたの復讐者として報いられるからである。復讐をなすのは、あなたがたのなすべきことではない。</p>
+<p><span class="v">五</span>あなたがたのうち、兄弟のために金や銀を費やす者は、裁きの日に豊かな宝を受けるであろう。孤児と、やもめと、よそ者とに、あなたがたの手を差し伸べよ。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。四節の「復讐してはならない、神が報いられる」という教えは、ローマ書十二章十九節（「愛する者たちよ、自分で復讐してはいけない……復讐はわたしのすることである、と主は言われる」）と旧約申命記三十二章三十五節の系譜に連なる教えである。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c51">第五十一章</h2>
+<p class="subtitle">エノクが子らに、地上に宝を隠すのではなく、貧しい者に施しをするよう教えたこと</p>
+<p><span class="v">一</span>あなたがたの力に応じて、貧しい者にあなたがたの手を差し伸べよ。</p>
+<p><span class="v">二</span>あなたがたの銀を地に隠してはならない。正直な人をその苦難において助けよ。そうすれば、あなたがたの労苦のときに、苦難があなたがたに臨むことはないであろう。</p>
+<p><span class="v">三</span>どのような激しく重いくびきがあなたがたに課せられようとも、すべてを主のために耐え忍べ。そうすれば、あなたがたは裁きの日に報いを受けるであろう。</p>
+<p><span class="v">四</span>朝に、昼過ぎに、そして夕べに、主の家に入り、万物の創造主に栄光を帰することは良いことである。</p>
+<p><span class="v">五</span>それゆえ、息あるすべてのものは主に栄光を帰せよ。見えるものも見えないものも、すべての被造物は賛美を捧げよ。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。四節の朝・昼・夕の三度の祈りの時は、ダニエル書六章十節や、後代の使徒行伝二章十五節・三章一節・十章九節に見える、ユダヤ教の伝統的な祈りの時刻（朝の犠牲・正午・夕の犠牲の時）に対応する（チャールズ注）。五節は詩篇百五十篇六節の直接的な反響である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c52">第五十二章</h2>
+<p class="subtitle">神が、その忠実な僕たちに、その御名をいかに賛美すべきかを教えられたこと</p>
+<p><span class="v">一</span>万軍の神を賛美するために唇を開き、心をもって主を賛美する人は幸いである。</p>
+<p><span class="v">二</span>隣人をののしり、中傷するために唇を開くすべての人は呪われている。</p>
+<p><span class="v">三</span>神を祝し、賛美するために唇を開く者は幸いである。</p>
+<p><span class="v">四</span>その生涯を通して、主の御顔の前で誓いと冒瀆のために唇を開く者は呪われている。</p>
+<p><span class="v">五</span>主のすべての御業を祝する者は幸いである。</p>
+<p><span class="v">六</span>主の御業を悪く言う者は呪われている。</p>
+<p><span class="v">七</span>自らの手を労働のために挙げようとする者は幸いである。</p>
+<p><span class="v">八</span>他人の労働を利用しようとする者は呪われている。</p>
+<p><span class="v">九</span>初めからの父祖たちの基を守る者は幸いである。</p>
+<p><span class="v">十</span>父祖たちの定めを破る者は呪われている。</p>
+<p><span class="v">十一</span>平和と愛とを打ち立てる者は幸いである。</p>
+<p><span class="v">十二</span>平和にある者たちを乱す者は呪われている。</p>
+<p><span class="v">十三</span>舌をもって平和を語らずとも、その心のうちにすべての人への平和がある者は幸いである。</p>
+<p><span class="v">十四</span>舌をもって平和を語りながら、その心のうちに平和のない者は呪われている。</p>
+<p><span class="v">十五</span>これらすべてのことは、量りと書物とをもって、大いなる裁きの日に明らかにされるであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章の「幸いなる者は……呪われた者は……」という対句形式の一連の格言は、第四十二章六〜十四節の祝福の列挙と対をなす構成であり、チャールズはその多くがシラ書に由来すると指摘するが、第四十二章の祝福に比べて文学的な力強さに欠けると評している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c53">第五十三章</h2>
+<p class="subtitle">われらの父が神のみもとにあって裁きの日にわれらのために執り成すと言ってはならないこと。父が子を、子が父を助けることはできないから</p>
+<p><span class="v">一</span>さて、わが子らよ、こう言ってはならない。「われらの父は神の御前に立ち、われらのために罪から（解き放たれるよう）祈っている」と。なぜなら、そこには、罪を犯した者を助けるいかなる人もいないからである。</p>
+<p><span class="v">二</span>あなたがたは、私がすべての人の業を、その創造される前から書き記していることを見ている。これは、とこしえに、すべての人について行われることである。</p>
+<p><span class="v">三</span>誰も、私がこの手で書き記したことを、言い変えることも取り消すこともできない。神はすべてのことを見ておられる。悪しき人々の思いさえも。それは心の蔵に納められているものである。</p>
+<p><span class="v">四</span>さて、わが子らよ、私があなたがたに語る、あなたがたの父のすべての言葉に心を留めよ。それは、後になって、「われらの父は、何らかの理由で、この愚かな時代のうちに、これらのことをわれらに告げなかった」と言って嘆くことのないようにするためである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。一節の、死者があの世で生者のために執り成すことはないという教えは、当時のユダヤ教内で肯定的な見解（第一エノク書二十二章十二節等）もあった中で、本書が異なる立場を取っていることを示す一節である（チャールズ注）。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c54">第五十四章</h2>
+<p class="subtitle">エノクが子らに、この書物を他の人々に与えるよう命じたこと</p>
+<p><span class="v">一</span>私があなたがたに与えたこれらの書物を、あなたがたの平安の嗣業とせよ。これを隠さず、これを求めるすべての人々に伝え、彼らを訓戒せよ。それは、彼らが、非常に不思議な主の御業を知るためである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。「非常に不思議な主の御業」という表現は、ヨブ記三十七章十四・十六節や詩篇七十一篇十七節の語彙を反映している。第三十三章九節・第四十七章二〜三節と同じ、書物の継承についての訓戒がここで再確認される。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c55">第五十五章</h2>
+<p class="subtitle">エノクが子らに宣言し、涙をもって語ったこと。「わが子らよ、わが時は近づいた。私は天へ行かねばならない。見よ、天使たちが私の前に立っている」</p>
+<p><span class="v">一</span>わが子らよ、定められた日と時とが近づき、私に去るよう促している。天使たちがやって来て、彼らに命じられたことを待ちながら、地上で私の前に立つであろう。</p>
+<p><span class="v">二</span>朝になれば、私は最も高き天へ、わがとこしえの住まいへと行くであろう。</p>
+<p><span class="v">三</span>それゆえ、私はあなたがたに、主の御顔の前で、すべて善きことを行うよう告げる。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章は、第三十八章で語られたメトシェラの待望の場面を承けて、いよいよエノクの最終的な昇天の時が近づいたことを告げる短い場面である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c56">第五十六章</h2>
+<p class="subtitle">メトシェラが父に祝福を求め、パンを食べるよう願ったこと</p>
+<p><span class="v">一</span>メトシェラは父エノクに答えて言った。「わが父よ、もしあなたの目に良いとお思いでしたら、あなたの御前に食べ物を置かせてください。そして、われらの家と、あなたの息子たち、あなたの家族すべてを祝福していただき、あなたの民があなたによって栄光を受けるようにしてください。そのあとで、神が言われたとおりに、あなたは去って行かれるでしょう。」</p>
+<p><span class="v">二</span>エノクはその子メトシェラに答えて言った。「わが子よ、聞け。神がその栄光の油をもって私に油を注がれて以来、私のうちには食物がなく、わが魂は地上の楽しみを何ひとつ覚えておらず、地上のいかなるものをも欲しない。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。二節でエノクが語る「食物を必要としない」状態は、第二十二章九〜十節で語られた、天における油注ぎと栄光の衣による変容の帰結である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c57">第五十七章</h2>
+<p class="subtitle">エノクが子メトシェラに、すべての兄弟たちを呼び集めるよう命じたこと</p>
+<p><span class="v">一</span>ただ、あなたのすべての兄弟たちと、あなたがたのすべての家族と、民の長老たちとを呼び集めよ。私が彼らに語り、私に定められたとおりに去って行くことができるように。</p>
+<p><span class="v">二</span>メトシェラは急いで、その兄弟たちレギム、リマン、ウカン、ケルミオン〔ガイダル〕と、民の長老たちとを呼び集め、彼らすべてを父エノクの前に連れて来た。エノクは彼らを祝福し、彼らに語った。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。二節に挙がるエノクの息子たちの名のうち、リマン・ウカン・ケルミオンは第一章では言及されておらず、本章で初めて登場する。用語対照表に追加した。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c58">第五十八章</h2>
+<p class="subtitle">エノクが子らに、主がアダムのゆえに地上に来られたときのことを語ったこと</p>
+<p><span class="v">一</span>わが息子たちよ、私に聞け。かつて主がアダムのために地上に来られ、ご自身が造られたすべての創造物を訪れられた日のことである。</p>
+<p><span class="v">二</span>主は地のすべての家畜、すべての這うもの、空を飛ぶすべての鳥を呼び、それらすべてをわれらの父アダムの前に連れて来られた。アダムは地のすべての生き物に名を与えた。</p>
+<p><span class="v">三</span>主は彼をすべてのものの主とし、すべてのものをその手のもとに置き、人に服従し、すべてに従うように従わせられた。こうして主は、人をご自身の所有物すべての支配者として創造された。</p>
+<p><span class="v">四</span>主は、人のために獣のいかなる魂をも裁かれることはないが、来るべき世において、獣の魂のために人の魂を裁かれるであろう。</p>
+<p><span class="v">五</span>なぜなら、人類のために、その数に応じてすべての人の魂のための特別な場所があるように、獣のためにも同様の場所があるからである。神が造られた魂は、大いなる裁きに至るまで、ひとつも滅びることはない。</p>
+<p><span class="v">六</span>そして、獣のすべての魂は、もし人がこれを粗末に養うなら、人に対して訴えを起こすであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。動物の魂にも来世における一定の存続と、人間による虐待に対する裁きの日の訴権とを認める本章の思想は、旧約聖書には類例がなく、当時のユダヤ教文献の中でも本書に特有の教説として、チャールズが詳細な比較研究を加えている箇所である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c59">第五十九章</h2>
+<p class="subtitle">エノクが子らすべてに、家畜の肉に触れてはならない理由を、そこから生じることのゆえに教えたこと</p>
+<p><span class="v">一</span>獣の魂に対して不法を行う者は、自らの魂に対して不法を行っているのである。</p>
+<p><span class="v">二</span>人が清い動物を捧げ、犠牲を献げるのは、自らの魂を保つためである。清い獣と鳥とから犠牲を献げるなら、彼は自らの魂を保つのである。</p>
+<p><span class="v">三</span>あなたがたに食物として与えられるすべてのものは、その四本の足を縛れ。それは贖いとなり、彼はそのことにおいて正しく行い、自らの魂を保つのである。</p>
+<p><span class="v">四</span>しかし、傷を負わせずに獣を殺す者は、自らの魂を殺し、自らの肉に対して罪を犯すのである。</p>
+<p><span class="v">五</span>もし誰かがひそかに動物を傷つけるなら、それは悪しき習わしであり、彼は自らの魂に対して罪を犯しているのである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章二〜三節は動物犠牲についての実際的な規定を含んでおり、チャールズはこれをエルサレム神殿崩壊（紀元七十年）以前の時代を反映するものと推定している。「四本の足を縛る」という規定の趣旨は判然としないが、屠殺の作法に関する古い伝承を反映していると考えられる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c60">第六十章</h2>
+<p class="subtitle">人を、武器によっても舌によっても殺してはならないこと</p>
+<p><span class="v">一</span>もし人が他人の魂を傷つけるなら、彼は自らの魂を傷つけているのである。彼の肉には救いがなく、とこしえに赦しもない。</p>
+<p><span class="v">二</span>人の魂を殺す者は、自らの魂を殺し、自らの体を滅ぼすのであり、彼にはとこしえに救いがない。</p>
+<p><span class="v">三</span>他人のために網を仕掛ける者は、自ら網に落ちるであろう。彼にはとこしえに救いがない。</p>
+<p><span class="v">四</span>人に向けて武器を備える者は、大いなる裁きにおいて、とこしえに罰を逃れることはない。</p>
+<p><span class="v">五</span>もし人が曲がったことを行い、いかなる魂に対しても悪しきことを語るなら、彼はとこしえに自らのための義を持つことはない。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。前章（第五十九章）が動物に対する罪を扱ったのに対し、本章は人間に対する殺害・加害の罪へと主題を移す。三節「他人のために網を仕掛ける者は自ら網に落ちる」は詩篇九篇十六節に見られる箴言的な発想である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c61">第六十一章</h2>
+<p class="subtitle">エノクが子らに、あらゆる不義から自らを守り、しばしば手を貧しい者に差し伸べ、その労苦から分け与えるよう戒めたこと</p>
+<p><span class="v">一</span>それゆえ今、わが子らよ、主が憎まれるあらゆる不義から、あなたがたの心を守れ。人が自らの魂を神に求めるように、すべての生ける魂に対しても、そのように行え。</p>
+<p><span class="v">二</span>来るべき世においては、私はすべてのことを知っている。人のために多くの住まいが備えられていること、善人には善きものが、悪人には悪しきものが、数え切れないほど多く備えられていることを。</p>
+<p><span class="v">三</span>幸いなる者たちの住まいへ行く者たちは幸いである。悪しき住まいには、安らぎもなく、そこから帰る術もないからである。</p>
+<p><span class="v">四</span>わが子らよ、小さき者も大いなる者も聞け。人がその心に善き思いを抱き、その労苦から捧げ物を主の御前に携えて来るとき——もしそれが自らの手で成したものでないなら、主はその手の労苦から御顔をそむけられ、彼はその手の業から益を得ることができない。</p>
+<p><span class="v">五</span>しかし、たとえ彼の手が働いても、その心がつぶやき、心からの捧げ物とせず、絶えずつぶやき続けるなら、彼には何の成功もない。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。二節の「多くの住まい」という表現は、ヨハネ福音書十四章二節の「わたしの父の家には、住む所がたくさんある」という有名な句と語彙・発想の両面で近似しており、両者の関係がしばしば議論される（チャールズ注）。四〜五節は、シラ書三十一章二十一〜二十四節を踏まえ、不本意な心からの捧げ物が無益であることを説く。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c62">第六十二章</h2>
+<p class="subtitle">信仰をもって捧げ物を携えて来ることがふさわしいこと。死後には悔い改めがないこと</p>
+<p><span class="v">一</span>忍耐をもって主の御顔の前に捧げ物を携えて来る人は幸いである。彼はその罪の報いを免れるであろう。</p>
+<p><span class="v">二</span>もし彼が時を外れた言葉を語るなら、彼には悔い改めがない。もし彼が定められた時を過ごし、その業をなさないなら、彼は幸いではない。死後には悔い改めがないからである。</p>
+<p><span class="v">三</span>なぜなら、人が時を外れて行うすべての行いは、人々の前では過ちであり、神の前では罪であるからだ。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。「死後には悔い改めがない」（二節）という教説は、本書全体を貫く重要な神学的立場であり、チャールズは、本書には赦しに関する寛容な教えがほとんど見られない点を指摘している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c63">第六十三章</h2>
+<p class="subtitle">貧しい者を軽んじてはならず、誠実に与えるべきこと。さもなくば神の前で呪われるであろうこと</p>
+<p><span class="v">一</span>人が裸の者を着せ、飢えた者を養うとき、彼は神から報いを受ける。</p>
+<p><span class="v">二</span>もし彼の心がつぶやくなら、彼は自らのために二重の悪をなす。彼は与えるものを台無しにし、それには何の報いもないであろう。</p>
+<p><span class="v">三</span>また、貧しい者も、その心が満たされ、その身が着せられたときに、傲慢にふるまうなら、彼はその貧しさに耐えたすべての効果を台無しにし、報いの祝福を得ることはないであろう。</p>
+<p><span class="v">四</span>なぜなら、主は傲慢で高慢に語るすべての人を憎まれるからである。同様に、あらゆる偽りの言葉、また不義に覆われたものをも。それは死をもたらす剣の鋭さで断ち切られ、火の中に投げ込まれ、とこしえに燃えるであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。四節「主は傲慢で高慢に語る者を憎まれる」は詩篇十八篇二十七節、箴言六章十六〜十七節の系譜に連なる。三節の、施しを受けた貧しい者が驕ることへの戒めは、施す側だけでなく受ける側の心のあり方をも問う、本書に独自の視点を示している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c64">第六十四章</h2>
+<p class="subtitle">主がエノクをお呼びになったので、民がアフザンという場所へ行き、彼に口づけしようと相談したこと</p>
+<p><span class="v">一</span>エノクがその子らと民の長たちにこれらの言葉を語り終えると、遠くの者も近くの者も、すべての民は、主がエノクをお呼びになったことを聞いた。彼らは相談し、皆で言った。「さあ、エノクに口づけしに行こう。」</p>
+<p><span class="v">二</span>人々は二千人の数に集まり、エノクとその子らがいるアフザンという場所へやって来た。</p>
+<p><span class="v">三</span>民の長老たちは集まり、ひれ伏し、エノクに口づけして彼に言った。「われらの父エノクよ、とこしえの王なる主によって祝福されますように。」</p>
+<p><span class="v">四</span>今、あなたの子らと、すべての民とを祝福してください。私たちが今日、あなたの前で栄誉を受けられますように。</p>
+<p><span class="v">五</span>あなたは主の御顔の前で、とこしえに栄光を受けているからです。神は、地上のすべての人にまさってあなたを選び、あなたを、見えるものと見えないものとの神の創造の書記、また人々の罪の裁き手、そしてあなたの家族の助けとして立てられました。」エノクはすべての民に答えて言った。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。二節の地名「アフザン」（Achuzan、写本Bでは「アスハン」）は、他の箇所（第五十五〜五十六章）で明示されない、エノクが子らを集めた場所の名として初めて示される。五節の「見えるものと見えないものとの神の創造の書記」という称号は、第四十章二節・第五十三章二節で示されたエノクの役割の総括である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c65">第六十五章</h2>
+<p class="subtitle">エノクの子らへの勧めの言葉</p>
+<p><span class="v">一</span>わが子らよ、聞け。何ものも存在せず、すべての被造物が造られる前に、主は見えるものと見えないものとの両方、すべてのものを造られた。</p>
+<p><span class="v">二</span>これらのことの時が来て過ぎ去ったとき、これらすべてのことの後に、いかにして神がご自身の姿、ご自身の似姿に人を造り、見るための目、聞くための耳、理解するための心、そして思案するための理性を彼に置かれたかを悟れ。</p>
+<p><span class="v">三</span>主は人のために世界を見つめ、人のためにすべての創造をなし、これを時に分けられた。時から年々を、年々から月々を、月々から日々を、日々からは週の七日を造られた。</p>
+<p><span class="v">四</span>これらのうちに、神は時刻を造り、これを小さな部分に分けられた。それは、人が季節を理解し、年、月、時刻を、その移り変わりと始まりと終わりとを計算し、自らの生涯を初めから死まで計算し、自らの罪を思いめぐらし、自らの悪しき行いと善き行いとを書き記すためである。</p>
+<p><span class="v">五</span>なぜなら、行われたことで主の御前に隠されるものは何もないからである。各人は自らの行いを知り、戒めに背かず、わが書き記したものを世代から世代へと確かに保つように。</p>
+<p><span class="v">六</span>主が造られた、見えるものと見えないものとのすべての創造が終わりに至るとき、すべての人は主の大いなる裁きに至るであろう。</p>
+<p><span class="v">七</span>そのとき、時は滅び、年もなく、月もなく、日もなく、時刻もなく、それが数えられることもないであろう。</p>
+<p><span class="v">八</span>ただひとつのとこしえがあり、主の大いなる裁きを逃れるすべての義人たちは、とこしえの命のうちに集められ、世々限りなく義人たちは集められ、とこしえの者となるであろう。</p>
+<p><span class="v">九</span>さらに、労苦もなく、病もなく、悲しみもなく、思い煩いもなく、欠乏もなく、夜もなく、闇もなく、ただ大いなる光があるであろう。</p>
+<p><span class="v">十</span>彼らのためには、打ち崩すことのできない大いなる城壁があり、輝かしく朽ちないパラダイスが彼らの守りとなり、彼らのとこしえの住まいとなるであろう。すべての朽ちるものは消え去り、とこしえの命があるであろう。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章は、創造から終末までの全歴史を要約する、エノクの最後の大いなる訓戒の中核部分である。十節の「打ち崩すことのできない城壁」は、第九〜十章で描かれた義人の楽園と悪人の場所とを隔てる境界と関連づけてチャールズは解釈している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c66">第六十六章</h2>
+<p class="subtitle">エノクが子らと民のすべての長老たちに、いかに恐れとおののきとをもって主の御前を歩み、主にのみ仕え、偶像を拝んではならないかを教えたこと。神が天と地とすべての被造物とその姿とを造られたゆえに</p>
+<p><span class="v">一</span>さて、わが子らよ、主が憎まれるあらゆる不義から、あなたがたの魂を守れ。恐れとおののきとをもってその御顔の前を歩み、主にのみ仕えよ。まことの神を拝め。もの言わぬ偶像ではなく。</p>
+<p><span class="v">二</span>その戒めに心を留め、正しい捧げ物をすべて主の御顔の前に携えて来よ。主は不義なるものを憎まれる。</p>
+<p><span class="v">三</span>主はすべてのことを見ておられる。人が心のうちに思いめぐらすことも、企てる計略も。すべての思いは絶えず主の御前にある。</p>
+<p><span class="v">四</span>もしあなたがたが天を見上げるなら、そこに主がおられる。主が天を造られたからである。もしあなたがたが地を見るなら、そこにも主がおられる。主が地を固め、そこにすべての被造物を確立されたからである。もしあなたがたが海の深みを、また地の下のすべてのものを調べるなら、そこにも主がおられる。主がすべてのものを創造されたからである。</p>
+<p><span class="v">五</span>人の手の業にひれ伏してはならず、また、すべての創造の主を離れて、主の御業にさえひれ伏してはならない。いかなる行いも、主の御顔の前で隠されることはないからである。</p>
+<p><span class="v">六</span>わが子らよ、忍耐のうちに、謙遜のうちに、中傷と侮辱にもかかわらず、信仰と真実のうちに、約束と病のうちに、非難のうちに、傷のうちに、誘惑のうちに、裸のうちに、欠乏のうちに、互いに愛し合いながら、この病める世を去るまで歩め。そうすれば、あなたがたはとこしえの相続者となるであろう。</p>
+<p><span class="v">七</span>大いなる裁きを逃れる義人たちは幸いである。彼らは太陽よりも七倍輝くであろう。なぜなら、この世においては、すべてのもののうち七分の一が分かたれているからである。</p>
+<p><span class="v">八</span>（さて）光について、闇について、食物について、甘美なるものについて、苦きものについて、パラダイスについて、責め苦について、火について、霜について、その他のことについて、私はこれらすべてを書き記した。あなたがたが読み、理解するためである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは写本Aのみに見える。本章をもって、第三十九章以来続いてきたエノクの子らへの訓戒が締めくくられる。四節は詩篇百三十九篇の神の遍在の思想を敷衍したものであり、チャールズは、本書の著者がシェオル（陰府）への言及をあえて避け、天と地と海の三分法にすべてを収めている点を指摘している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c67">第六十七章</h2>
+<p class="subtitle">主が地の上に闇を送り、民とエノクとを覆われたこと。エノクは高く上げられ、天には光があったこと</p>
+<p><span class="v">一</span>エノクが民と語り終えたとき、主は地の上に闇を送られた。暗闇があり、これはエノクとともに立っていた人々を覆い隠した。</p>
+<p><span class="v">二</span>天使たちは急いでエノクを取り、彼を最も高き天へと運んだ。そこで主は彼を迎え入れ、その御顔の前に彼を置かれた。すると闇は地から去り、光があった。</p>
+<p><span class="v">三</span>民は見たが、エノクがどのようにして取り去られたのかを理解せず、神に栄光を帰した。このようなことを見た者たちは、それぞれの家へと帰って行った。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。二節の「最も高き天」への昇天は、パラダイス（義人のとこしえの住まい）が第三の天にあるとする本書の一貫した体系（第八〜九章、第四十二章参照）に照らすと例外的な、エノクひとりに許された特別な栄誉としてチャールズは注記している。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="c68">第六十八章</h2>
+<p class="subtitle">エノクの生涯の日数について、また、メトシェラと兄弟たちがアフザンに祭壇を築いたこと</p>
+<p><span class="v">一</span>エノクはツィヴァンの月の六日に生まれ、三百六十五年生きた。彼はツィヴァンの月の一日に天へ引き上げられ、天に六十日いた。</p>
+<p><span class="v">二</span>彼は、主が造られたすべての創造の記述を書き記し、三百六十六の書物を書き、これをその息子たちに与えた。</p>
+<p><span class="v">三</span>彼は地上に三十日いた。こうして彼は、同じツィヴァンの月の同じ日、すなわち六日——彼が生まれた日、そして同じ時刻に、天へと連れて行かれた。</p>
+<p><span class="v">四</span>すべての人がこの世で不確かな存在を持つように、その始まりと誕生、そしてこの世からの旅立ちもまた同様である。彼が始まった時刻、その時刻に彼は生まれ、その時刻に彼は去って行くのである。</p>
+<p><span class="v">五</span>メトシェラは、エノクの息子たちであるそのすべての兄弟たちとともに急ぎ、エノクが天へ引き上げられた、あのアフザンと呼ばれる場所に、祭壇を築いた。</p>
+<p><span class="v">六</span>彼らは家畜を取り、すべての民を招き、主の御顔の前で犠牲を献げた。</p>
+<p><span class="v">七</span>すべての民と、民の長老たちとが来た。彼らすべての群衆が祭りに集まり、エノクの息子たちに贈り物を携えて来て、三日間、喜び楽しみながら、大いなる祭りを開いた。彼らは、御前に恵みを得たエノクを通して、このようなしるしを与えられた神を賛美した。そして、これを彼らの子々孫々に、世代から世代へと、とこしえに伝えるようにと。アーメン。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章をもって、チャールズ版が伝える本文六十八章が完結する。五節の「アフザン」は第六十四章二節で既出の地名で、メトシェラたちがそこに記念の祭壇を築いたとされる。なお、チャールズ版には本章に続けて、写本Sokolov（他）にのみ見られる「メルキゼデクの奇跡的誕生」の物語が、本文六十八章とは別立ての「付録」（Appendix）として収録されている。この付録は写本Aにも写本Bにも見られず、後代の（おそらくキリスト教異端派による）増補とチャールズは推定しており、本設計書§七で当初「第六十七〜六十八章」として予定していたメルキゼデク挿話は、実際のチャールズ版の章区分では本文の六十八章には含まれず、本文に続く独立した付録に当たることが判明した。この付録の扱いについては、翻訳を続けるかどうかも含め、あらためてユーザーの判断を仰ぐ必要がある。</p>
+</aside>
+</article>
+</section>
+<section class="part-title" id="pappx"><div class="pt-inner"><p class="pt-no">付録</p><h1>メルキゼデクの書</h1><p class="pt-span">付録第一章〜第五章</p></div></section>
+<section class="part">
+<article class="chapter"><h2 id="a1">付録第一章</h2>
+<p class="subtitle">メトシェラが民の祭司として立てられたこと</p>
+<p><span class="v">一</span>三日目、夕べのころ、民の長老たちはメトシェラに語って言った。「主の御顔の前に、また、すべての民の前に、また主の祭壇の前に立ちなさい。そうすれば、あなたは民のうちで栄誉を受けるでしょう。」</p>
+<p><span class="v">二</span>メトシェラは民に答えた。「人々よ、待ちなさい。わが父エノクの神なる主が、御自ら、その民のために祭司を立てられるまでは。」</p>
+<p><span class="v">三</span>民は、アフザンの地でなお一夜待ったが、それは無駄であった。</p>
+<p><span class="v">四</span>メトシェラは祭壇のそばにあって、主に祈って言った。「おお、全世界のただひとりの主よ、わが父エノクを取られた方よ、あなたの民のために祭司を立て、その心にあなたの栄光を畏れることを教え、すべてをみこころのままに行わせてください。」</p>
+<p><span class="v">五</span>メトシェラは眠った。すると主は夜の幻のうちに彼に現れて言われた。「聞け、メトシェラよ、私はあなたの父エノクの神なる主である。この民の声を聞き、わが祭壇の前に立て。そうすれば、私はすべての民の前であなたに栄誉を与え、あなたはその生涯のすべての日において栄誉を受けるであろう。」</p>
+<p><span class="v">六</span>メトシェラは眠りから起き上がり、彼に現れられた主をほめたたえた。</p>
+<p><span class="v">七</span>民の長老たちはメトシェラのもとに急ぎ来た。神なる主はメトシェラの心を傾けて民の声を聞かせられた。彼は言った。「神なる主は、今日、私の目の前で、このすべての民に祝福を与えられる。あなたがたの神なる主が、この民に、その目に良しと見えることを行われるように。」</p>
+<p><span class="v">八</span>民の長老であるサルサン、カルミス、ザズスは急いで、メトシェラに美しい衣を着せ、その頭に輝く冠を置いた。</p>
+<p><span class="v">九</span>民は急いで、羊と牛と鳥、すなわちメトシェラが主の御顔の前に、また民のために献げるべきとされているすべてのものを持って来た。</p>
+<p><span class="v">十</span>メトシェラは主の祭壇へと出て行った。その顔は、日の昇るときの太陽のように輝いており、すべての民は彼の後に従った。</p>
+<p><span class="v">十一</span>メトシェラは主の祭壇の前に立ち、すべての民は祭壇の周りに立った。</p>
+<p><span class="v">十二</span>民の長老たちは羊と牛とを取り、その四本の足を縛って、祭壇の上に載せ、メトシェラに言った。</p>
+<p><span class="v">十三</span>「刃物を取り、定めの仕方に従って、主の御顔の前でこれらを屠りなさい。」</p>
+<p><span class="v">十四</span>メトシェラは両手を天に向かって伸べ、主に呼ばわって、こう言った。「ああ、主よ、私は何者だというのでしょうか、あなたの祭壇の頭に、またこの民の頭に立つとは。</p>
+<p><span class="v">十五</span>主よ、今、あなたの僕と、このすべての民とを顧みてください。今、求められているすべてのことが起こり、すべての民の前であなたの僕に祝福を与えてください。そうすれば、彼らは、あなたが御自分の民の上に祭司を任じられたことを理解するでしょう。」</p>
+<p><span class="v">十六</span>メトシェラが祈り終えると、そのことが起こった。祭壇が揺れ動き、一振りの刃物が祭壇から立ち上がり、すべての民の前で、メトシェラの手へと跳び込んだ。民は震え、主をほめたたえた。</p>
+<p><span class="v">十七</span>こうしてメトシェラは、その日から、主の御顔の前で、また、すべての民の前で誉れを受けた。</p>
+<p><span class="v">十八</span>メトシェラはその刃物を取り、民が持って来たすべてのものを屠った。その日、彼らは主の御顔の前で、また、メトシェラの前で喜び楽しんだ。</p>
+<p><span class="v">十九</span>その後、民はそれぞれ自分の家へと去って行った。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>この付録（メルキゼデクの奇跡的誕生の物語、および続く付録第五章のノアの箱舟の補記）は、チャールズ版の解説によれば、写本ソコロフが底本とした写本にのみ、あたかも第二エノク書本文の一部であるかのように組み込まれた形で伝わっており、写本A・Bにはまったく見られない。本文六十八章の末尾（第六十八章七節「三日間、喜び楽しみながら」）の直後に接続する形で伝承されており、本訳でも便宜上、本文とは独立した「付録」として、ローマ数字による付録内独自の章番号（I〜V）で扱う。テキストは随所で損傷・破損しており、チャールズは付録第三章三十四節・第四章八節などの記述から、この断片を初期キリスト教異端派（ユダヤ教的なメルキゼデク伝承への後代の増補）の作と推定している。本章の内容は、エノクの子メトシェラが、エノクの昇天後、民の求めに応じて主から祭司として立てられる場面である。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="a2">付録第二章</h2>
+<p class="subtitle">メトシェラの死とニルへの祭司職の継承、および大洪水の予告</p>
+<p><span class="v">一</span>メトシェラはその日から十年の間、主の御顔とすべての民の前で祭壇に立ち続け、とこしえの嗣業を信頼し、全地とそのすべての民をよく教えた。メトシェラが生きていたすべての日々の間、空しさのゆえに主から離れ去る者はひとりもいなかった。</p>
+<p><span class="v">二</span>主はメトシェラを祝福され、その献げ物と供え物、そして彼が主の御顔の前で行ったすべての奉仕を喜ばれた。</p>
+<p><span class="v">三</span>メトシェラの去るべき日々の時が来たとき、主は夜の幻のうちに彼に現れて言われた。「聞け、メトシェラよ、私はあなたの父エノクの神なる主である。あなたに命じる、あなたの生涯の日々がいかに終わろうとしているか、また、あなたの憩いの日がいかに近づいているかを見よ。</p>
+<p><span class="v">四</span>あなたの子ラメクの子、ノアの後に生まれた次の子ニルを呼び、あなたの聖別の衣を彼に着せ、わが祭壇のそばに彼を置き、彼の日々に起こるべきすべてのことを彼に告げよ。全地の滅び、また地上のすべての人とすべての生き物の滅びの時が近づいているからである。</p>
+<p><span class="v">五</span>彼の日々には、地上に非常に大いなる混乱が起こるであろう。人はその隣人をねたみ、民は民に対して怒りに燃え、国は国に対して戦いを起こし、全地は汚れと血、あらゆる種類の悪に満ちるであろう。</p>
+<p><span class="v">六</span>その上さらに、彼らはその造り主を捨て去り、空しい神々に、また天の大空に、地の運行と海の波とにひれ伏すであろう。かの敵対する者は増し広がり、そのわざを喜び、私を大いに悩ませるであろう。</p>
+<p><span class="v">七</span>全地はその姿を変え、すべての木、すべての実はその種を変え、滅びの時を待ち望む。すべての民は地上において変わり果て、私を嘆かせる。</p>
+<p><span class="v">八</span>そのとき私は、深淵に命じて地の上に自らを注ぎ出させ、天の水の大いなる蔵は、その本来の性質のままに、その最初の性質に従って地の上に来るであろう。</p>
+<p><span class="v">九</span>地のすべての安定は滅び、全地は震え、その日から力を奪われるであろう。</p>
+<p><span class="v">十</span>そのとき私は、あなたの子ラメクの子、その長子ノアを保ち、その子孫から別の世界を興すであろう。その子孫は、人々が再びわが御顔の前で罪を犯す第二の滅びに至るまで、とこしえに存続するであろう。」</p>
+<p><span class="v">十一</span>メトシェラは眠りから飛び起き、その夢に深く心を乱された。彼はすべての民の長老たちを呼び、主が彼に語られたすべてのこと、また、主から彼に現れたすべての幻を彼らに告げた。</p>
+<p><span class="v">十二</span>民はその幻を聞いて嘆き、彼に答えた。「神なる主が、みこころのままになさいますように。さあ、メトシェラよ、主があなたに命じられたすべてのことを成し遂げてください。」</p>
+<p><span class="v">十三</span>メトシェラは、ラメクの子、ノアの弟であるニルを呼び、すべての民の前で祭司の衣を彼に着せ、祭壇の頭に彼を置き、民のうちで彼が行うべきすべてのことを教えた。</p>
+<p><span class="v">十四</span>メトシェラは民に呼ばわった。「見よ、今日から、ニルはあなたがたの前に、君主また指導者として立つであろう。」</p>
+<p><span class="v">十五</span>民はメトシェラに言った。「あなたの言葉どおりに、私たちに成りますように。主の御声が、あなたに語られたとおりでありますように。」</p>
+<p><span class="v">十六</span>メトシェラが祭壇の前で民に語り終えたとき、その霊は乱れ、彼は膝を折り、両手を天に向かって伸べ、神に祈った。そして、彼が祈っている間に、その霊は主のもとへと出て行った。</p>
+<p><span class="v">十七</span>ニルとすべての民は急いで、アルザンの地にメトシェラのために墓を作った。</p>
+<p><span class="v">十八</span>ニルは、その祭司の衣をすべて纏った栄えある装いで、灯りとともに、大いなる盛儀をもって進み出た。民はメトシェラの遺体を担ぎ上げ、これを尊びつつ、彼らが作った墓に納めて葬り、そして言った。「メトシェラは主の御顔の前で、またすべての民の前で祝福されていた。」</p>
+<p><span class="v">十九</span>彼らがそれぞれの家へ去ろうとしていたとき、ニルは民に言った。「今、急いで行き、羊と若い雌牛、山鳩と鳩とを持って来なさい。私たちはこれらを主の御顔の前に献げ、それから家へ帰りましょう。」</p>
+<p><span class="v">二十</span>民は祭司ニルに聞き従い、急いで犠牲を持って来て、これを祭壇の頭に縛りつけた。</p>
+<p><span class="v">二十一</span>ニルは犠牲を屠る刃物を取り、持って来られたすべての犠牲を屠り、主の御顔の前にこれを献げた。</p>
+<p><span class="v">二十二</span>すべての民は主の御顔の前で喜び、その日、天と地の支配者であるニルの主をほめたたえた。その日から、ニルの日々の間、二百二年にわたり、全地に平和と秩序があった。</p>
+<p><span class="v">二十三</span>しかし、その後、民は神から離れ去り、互いにねたみ合い始め、民は民に対して背き、舌は舌に対して立ち上がり、ののしり合った。</p>
+<p><span class="v">二十四</span>たとえ唇は同じであっても、心はそれぞれ異なるものを選び取った。</p>
+<p><span class="v">二十五</span>こうして悪魔は三度目の支配を始めた。第一の時は楽園の前に、第二の時は楽園のうちに、第三の時は楽園の外に。彼は洪水に至るまでこれを続けた。</p>
+<p><span class="v">二十六</span>大いなる争いと混乱が起こった。祭司ニルはこれを聞いて深く嘆き、心のうちに言った。「まことに、私は悟った。時が近づいたことを、また、私の父ラメクの父メトシェラに主が語られた終わりが近づいたことを。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章はメトシェラの死とニルへの祭司職継承、そして洪水の予告を内容とする。十節で予告される「別の世界」の担い手ノアと、その子孫が「第二の滅び」（終末の裁き）に至るまで存続するという構図は、洪水物語を終末論的な型として捉える黙示文学的な視点を示している。十七節の地名「アルザン」は付録第一章三節の「アフザン」と同一の地（本文第六十四章で既出の地名）の異表記と見られる。二十五節の「悪魔が三度支配する」という数え方は、堕落以前の楽園・楽園内での誘惑・楽園追放後の地上という三段階を指すものと解される。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="a3">付録第三章</h2>
+<p class="subtitle">ニルの妻ソポニマの死と、幼子メルキゼデクの奇跡的な出現</p>
+<p><span class="v">一</span>ニルの妻で、名をソポニマという者は、不妊であったので、ニルに子をもうけなかった。</p>
+<p><span class="v">二</span>ソポニマは老年の時にあり、その死の日に、彼女はその胎に身ごもった。しかし祭司ニルは、主が彼を民の御顔の前で仕えるべく任じられたその日から、彼女と床を共にせず、彼女を知ることもなかった。</p>
+<p><span class="v">三</span>ソポニマは自分が身ごもったことを知ると、恥じ入り、卑しめられた思いを抱き、産むまでの間ずっと身を隠していたので、民のうち誰もこれを知らなかった。</p>
+<p><span class="v">四</span>二百八十二日が満ちて、出産の日が近づき始めたとき、ニルはその妻のことを思い出し、語り合おうとして、彼女を自分の家に呼び寄せた。</p>
+<p><span class="v">五</span>ソポニマは身ごもったまま、夫ニルのもとに来た。定められた出産の日は近づいていた。</p>
+<p><span class="v">六</span>ニルは彼女を見て、非常に恥じ入り、彼女に言った。「妻よ、あなたは何ということをしたのか。あなたはこの民の前で私を辱めた。今、私から去り、あなたの胎の恥が始まったところへ行きなさい。私があなたに手を汚し、主の御顔の前で罪を犯すことのないように。」</p>
+<p><span class="v">七</span>ソポニマは夫ニルに語って言った。「わが主よ、ご覧ください。私の老年の時、また死の日が来ました（もはや私に若さはありません）。私には、いつ自分の年月が過ぎ去り、この胎の不妊が始まったのか、分かりません。」</p>
+<p><span class="v">八</span>ニルは妻を信じず、再び彼女に言った。「私から去りなさい。私があなたに害を加え、主の御顔の前で罪を犯すことのないように。」</p>
+<p><span class="v">九</span>ニルが妻に語り終えたとき、そのことが起こった。ソポニマはニルの足もとに倒れ、死んだ。</p>
+<p><span class="v">十</span>ニルは深く嘆き、心のうちに言った。「これは私の言葉のゆえであったのか。人はその言葉と思いとによって、主の御顔の前で罪を犯すことがあるのだから。</p>
+<p><span class="v">十一</span>今、主は私を憐れんでくださる。私は心のうちにまことに知っている、私の手が彼女に及ばなかったことを。それゆえ私は言う。『おお主よ、あなたに栄光がありますように。地上の誰も、主がなされたこのわざを知らないのですから。』」</p>
+<p><span class="v">十二</span>ニルは急いで家の戸を閉め、その兄弟ノアのもとへ行き、妻について起こったすべてのことを彼に告げた。</p>
+<p><span class="v">十三</span>ノアは急いで、兄弟ニルとともにニルの家に来た。ソポニマの死のためであった。彼らは互いに語り合い、出産の時に彼女の胎がどのような様子であったかを見た。</p>
+<p><span class="v">十四</span>ノアはニルに言った。「わが兄弟ニルよ、これをあなたの悲しみの種としてはならない。主は今日、私たちの恥を隠してくださった。民のうち誰もこれを知らないのだから。</p>
+<p><span class="v">十五</span>さあ、急いで行き、密かに彼女を運ぼう。主が私たちの恥の恥辱を隠してくださるように。」</p>
+<p><span class="v">十六</span>彼らはソポニマを寝台の上に横たえ、黒い衣で彼女を包み、葬りの用意をして家の中に閉じ込め、密かに墓を掘った。</p>
+<p><span class="v">十七</span>すると、死んだソポニマから一人の幼子が出て来て、彼女の右手のかたわらの寝台に座った。ノアとニルが入って見ると、幼子は死んだソポニマのそばに座り、その衣を拭っていた。</p>
+<p><span class="v">十八</span>ノアとニルは大いなる恐れに襲われた。その子は三歳の子のように体が完全に整っており、その唇をもって語り、主をほめたたえたからである。</p>
+<p><span class="v">十九</span>ノアとニルはこれを見つめた。すると見よ、祭司職の印がその胸にあり、その顔だちは栄光に満ちていた。</p>
+<p><span class="v">二十</span>ノアとニルは言った。「見よ、主はみこころのままに、私たちの血筋によって聖別を新たにされる（わが兄弟よ、これは主から出たことであり、主は私たちのうちに聖別の血を新たにされるのだ）。」</p>
+<p><span class="v">二十一</span>ノアとニルは急いでその子を洗い、祭司の衣を着せ、祝福されたパンを与えた。子はそれを食べた。彼らはその名をメルキゼデクと呼んだ。</p>
+<p><span class="v">二十二</span>ノアとニルはソポニマの遺体を取り、黒い衣を脱がせ、非常に輝かしい衣を彼女に着せ、彼女のために聖堂を建てた（別の言い方では――美しく飾られた墓）。</p>
+<p><span class="v">二十三</span>ノアとニルとメルキゼデクは進み出て、彼女を公に葬った。ノアは兄弟ニルに言った。「この子を、その時が来るまで密かに見守りなさい。欺く民が全地の上に起こり、神を拒み始め、何も悟らぬままに彼を殺そうとするであろうから。」そしてノアは自分の場所へと去って行った。</p>
+<p><span class="v">二十四</span>ニルの日々に、大いなる不法が全地の上に増し広がり始めた。</p>
+<p><span class="v">二十五</span>ニルは深く思い煩い始め、とりわけこの子のことを案じて言った。「ああ、とこしえの主よ。私の日々に、あらゆる種類の不法が地上に増し広がり始めました。私は悟ります、終わりがかつてなく私たちに近づいていることを、民の不法のゆえに全地に及んでいることを。</p>
+<p><span class="v">二十六</span>今、主よ、この幻は何を意味し、その解き明かしは何でしょうか。私はこの子のために何をすべきでしょうか。この子もまた、私たちとともに滅びへと行くのでしょうか。」</p>
+<p><span class="v">二十七</span>主はニルの声を聞かれ、夜の幻のうちに彼に現れて言われた。「ニルよ、私は地上に多くのことにおいて起こった大いなる不法に耐えることができない。見よ、私は今、地上に大いなる滅びを送ろうと望んでいる。すべての地上の生き物は滅びるであろう。</p>
+<p><span class="v">二十八</span>しかし、ニルよ、この子のことで思い煩ってはならない。まもなく私は、わが長たる隊長ミカエルを遣わす。彼はこの子を取り、エデンの楽園に――かつてアダムが罪を犯すまでの七年の間、天が常に開かれたままにあったあの園に――置くであろう。</p>
+<p><span class="v">二十九</span>この子は、私が示したように、この世代とともに滅びる者たちと共には滅びず、すべてにおいて聖なる祭司メルキゼデクとなるであろう。私は彼を、先にいた祭司たちの長となるよう任じる（異読――彼をとこしえの祭司の中の祭司とし、私は彼を聖別し、大いに聖なる者とされた民の上に彼を任じるであろう）。」</p>
+<p><span class="v">三十</span>ニルは眠りから起き上がり、彼に現れられた主をほめたたえて言った。「わが父祖たちの神なる主は祝福されますように。主は私に語られました（異本の追加――あなたの言葉のとおり、わが父祖たちの祭司職における私の祭司職の失墜を許されない主は）。主は、わが妻ソポニマの胎のうちに、私の日々において、大いなる祭司を造られました。</p>
+<p><span class="v">三十一・異文</span>私には家族がありませんでしたが、この子は私にとって家族の代わりとなり、私の子となるでしょう。あなたはセツ、エノク、タラシダム、マレレイル、エノスといったあなたの僕である祭司たちとともに、彼を誉れある者としてくださるでしょう。こうしてメルキゼデクは、また別の世代において祭司となるでしょう。</p>
+<p><span class="v">三十二・異文</span>私は知っています、この世代が混乱のうちに終わり、すべてが滅びることを。そして、わが兄弟ノアは、その日に保たれるでしょう。</p>
+<p><span class="v">三十三・異文</span>私の血筋から多くの民が起こり、メルキゼデクは民のうちで祭司たちの長となり、ひとりで治め、おお主よ、あなたに仕えるでしょう。」</p>
+<p><span class="v">三十四</span>この家系に、大いなる祭司となりうる別の子はなく、ただこの私の子、あなたの僕だけがおります。それゆえ、大いなる主よ、これを理由として、彼を、あなたの僕である大いなる祭司たち――セツ、エノス、ルシイ、アルミラム、プラシダム、マレレイル、セロク、アルサン、アレエム、エノク、メトシェラ、そして私、あなたの僕ニル――とともに誉れある者としてください。そしてメルキゼデクは、先にいた十二人の祭司たちの頭となり、ついにはすべての者の上に立つ頭、大いなる大祭司、神の言、これまでにあったすべてのものにまさる大いなる栄光あるしるしを行う力となるでしょう。</p>
+<p><span class="v">三十五</span>このメルキゼデクは、アフザンの地――すなわち、アダムが創造された地の中心――において祭司また王となるであろう。彼の墓も、ついにはそこにあるであろう。</p>
+<p><span class="v">三十六</span>その大祭司についてはこう書き記されている。彼もまた、地の中心であるその場所に葬られるであろう、と。それは、アダムがその子アベル――兄弟カインに殺された者――をそこに葬ったのと同じである。アベルは、アダムがコクマルガラスと呼ばれる鳥がその雛を葬るのを見るまでの三年間、葬られずにいた。</p>
+<p><span class="v">三十七</span>私は知っています、大いなる混乱が来たことを、この世代が混乱のうちに終わることを、そして、わが兄弟ノアが保たれることを除いて、すべてが滅びることを。その後、彼の家系からひとつの植えつけが起こり、別の民が生じ、また別のメルキゼデクが民のうちで祭司たちの長となり、治めて、主に仕えるでしょう。」</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章は、祭司ニルの妻ソポニマが老年にして処女懐胎に等しい形で身ごもり、出産の床でみずから息絶えるとともに、すでに三歳児ほどの姿と祭司職の印を身に帯びた幼子（メルキゼデクと名づけられる）が現れるという、この付録の中心をなす奇跡物語である。三十〜三十三節はチャールズ版の脚注によれば一部の写本にのみ見られる異文で、通常のテキストでは三十節から直接三十四節に続く。三十四節に列挙される歴代の祭司の系譯（セツからニルに至る）、および「大祭司、神の言」としてのメルキゼデクの位置づけは、チャールズが本付録全体を初期キリスト教異端派の作と推定する根拠のひとつである。三十五節の「アフザン」は付録第一章・第二章に既出の地（本文第六十四章の地名の異表記）で、地の中心・アダム創造の地とされる。三十六節のアベル埋葬の逸話は、ラビ文献に見られる伝承と類似する。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="a4">付録第四章</h2>
+<p class="subtitle">大天使ミカエルがメルキゼデクをエデンの楽園へ移したこと、およびニルの死</p>
+<p><span class="v">一</span>その子がニルの屋根の下に四十日いたとき、主はミカエルに言われた。「地上のニル、あの祭司のもとへ下って行き、彼のもとにいるわが子メルキゼデクを取り、保つためにエデンの楽園に置きなさい。時が近づいているからである。私は地上にすべての水を注ぎ出し、地の上にあるものはすべて滅びるであろう。</p>
+<p><span class="v">二</span>（そして私は別の民族を立てる。メルキゼデクは、その家系において祭司たちの長となる。この家系におけるセツが私にとってそうであるように。）」</p>
+<p><span class="v">三</span>ミカエルは急ぎ、夜のうちに来た。ニルはその寝床で眠っていた。ミカエルは彼に現れて言った。「主はあなたにこう言われる。『ニルよ、その子を私に送りなさい。私はその子をあなたに託していたのだ。』」</p>
+<p><span class="v">四</span>ニルは、長たる隊長ミカエルが自分に語っていることを知らず、その心は乱れて言った。「もし民がこの子のことを知り、これを奪えば、彼らはこの子を殺すであろう。この民の心は、主の御顔の前で狡猾であるから。」そしてニルは、自分に語りかける者に言った。「その子は私のもとにはいない。私に語りかけるあなたが誰であるか、私は知らない。」</p>
+<p><span class="v">五</span>ニルに語りかけていた者は答えた。「恐れるな、ニルよ、私は主の長たる隊長である。主は私を遣わされた。見よ、私は今日あなたの子を取り、これとともに行き、エデンの楽園に置くであろう。彼はとこしえにそこにいるであろう。</p>
+<p><span class="v">六</span>十二代の世代を経て、千七十年が経つとき、その世代にひとりの義人が生まれるであろう。主は彼に、あなたの兄弟ノアの箱舟が留まるであろうあの山へ上るよう告げられる。彼はそこで、偶像を拝む民から身を隠して七年その地に生きていた、別のメルキゼデクを見出すであろう。彼はその者を連れ出し、その者はこのメルキゼデク――祭司職の初めとなった者――の姿にならって、サレムの町で祭司、また最初の王となるであろう。そのときまでに、アダムの初めと創造から三千四百三十二年が満ちるであろう。</p>
+<p><span class="v">七</span>そのメルキゼデクから、大いなるイグーメン――すなわち指導者――に至るまで、数にして十二人の祭司が起こるであろう。その者は、見えるものと見えないものすべてを生み出す者である。</p>
+<p><span class="v">八</span>ニルは自分が最初に見た夢を悟り、これを信じた。彼はミカエルに答えて言った。「主は祝福されますように。主は今日、あなたを私に栄光ある者として示されました。今、あなたの僕ニルを祝福してください。私たちはこの世からの旅立ちに近づいています。この子を取り、主があなたに語られたとおりに、彼になしてください。」</p>
+<p><span class="v">九</span>ミカエルは、自分が来たその夜のうちにその子を取り、自分の翼に乗せ、エデンの楽園に置いた。</p>
+<p><span class="v">十</span>ニルは翌日起き上がり、自分の家へ行ったが、その子を見出せなかった。喜びの代わりに非常に大いなる悲しみがあった。彼にはこの子のほかに息子がいなかったからである（異読――彼はこの子を息子の代わりと見なしていたからである）。</p>
+<p><span class="v">十一</span>こうしてニルは死んだ。彼の後、民のうちに祭司はいなかった。その時から、地上に大いなる混乱が起こった。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。五節の英訳原文は「he who was speaking to me answered」（私に語りかけていた者）と一人称的な表現になっているが、文脈上はニルに語りかける場面であるため、本訳では「ニルに語りかけていた者」として三人称で訳した（チャールズ版の脚注も、この人称の乱れを写本の混乱によるものとみている）。六節で予告される「もうひとりのメルキゼデク」がノアの箱舟の山でサレムの祭司・王として見出されるという記述は、創世記十四章のサレムの王メルキゼデクの伝承と、この付録独自のメルキゼデク転生譚とを接続する挿話である。十一節をもって、祭司ニルの物語は幕を閉じる。</p>
+</aside>
+</article>
+<article class="chapter"><h2 id="a5">付録第五章</h2>
+<p class="subtitle">ノアの箱舟についての補記</p>
+<p><span class="v">一</span>神は、アッシリアとアルメニアの間、アラビアの地、海のほとりにあるアララト山でノアを呼び、彼に言われた。「そこに、長さ三百エル、幅五十エル、高さ三十エルの箱舟を造れ。中に二階を設け、戸の大きさは一エルほどにせよ。</p>
+<p><span class="v">二</span>かの三百エルは、私たちの尺度では一万五千。かの五十エルは、私たちの尺度では二千五百。かの三十エルは、私たちの尺度では九百。かの一エルは、私たちの尺度では五十である。」</p>
+<p><span class="v">三</span>この数に従って、ユダヤ人は今日に至るまで、主がノアに語られたとおりに、ノアの箱舟のこの寸法を守り、それぞれの尺度、それぞれの規則を定めている。</p>
+<p><span class="v">四</span>神なる主は天の戸を開かれ、雨は百五十日の間地上に降り続き、すべての肉なる者は死んだ。</p>
+<p><span class="v">五</span>ノアは五百歳のとき、三人の息子、セム、ハム、ヤペテをもうけた。</p>
+<p><span class="v">六</span>三人の息子が生まれてから百年後、彼は箱舟に入った。それは、ヘブライ人の暦ではイツァルの月、エジプト人の暦ではファメノトの月の十八日のことであった。</p>
+<p><span class="v">七</span>箱舟は四十日の間漂った。そして彼らは合わせて百二十日の間、箱舟の中にいた。</p>
+<p><span class="v">八</span>彼は六百歳のときに箱舟に入り、その生涯の六百一年目に箱舟から出た。それは、エジプト人の暦ではファルムトの月、ヘブライ人の暦ではニサンの月の二十八日ごろのことであった。</p>
+<p><span class="v">九</span>それから彼は二百五十年生きて、死んだ。彼は、私たちの神なる主のみこころのままに、合わせて九百五十年生きた。主に、初めから、今も、世の終わりまで、栄光がありますように。アーメン。</p>
+<p><span class="v">十</span>エノクは合わせて三百六十五歳であった。</p>
+<p><span class="v">十一</span>ノアの箱舟については、別の仕方でもここに書き記されている。彼らの三百エルは、私たちの尺度では一万五千。彼らの百エルは、私たちの尺度では五千。彼らの二十エルは、私たちの尺度では千。彼らの十エルは、私たちの尺度では五百。彼らの五エルは、私たちの尺度では二百五十。彼らの一エルは、私たちの尺度では五十である。これは真実として語られたことである。</p>
+<aside class="notes"><p class="notes-h">訳注</p>
+<p>見出しは付されていない。本章はメルキゼデク物語から離れ、ノアの箱舟の寸法換算と、洪水の年代記を簡潔にまとめた補記である（内容上、メルキゼデク物語との直接のつながりはなく、写本編纂の過程で本付録の末尾に付加されたものと見られる）。二節と十一節とで箱舟の寸法換算に相違がある点（同じ「エル」の換算が異なる）は、チャールズ版の脚注も指摘する原文の混乱であり、本訳でも整合させずにそのまま訳出した。十節で唐突に「エノクは三百六十五歳であった」と繰り返されるのは、本文第一章一節・第六十八章一節の記述と符合するもので、写本の末尾に本文の要点を再確認する形で付け加えられたものと考えられる。本節をもって、チャールズ版に伝わる第二エノク書関連文書（本文六十八章＋本付録）の全訳が完結する。</p>
+</aside>
+</article>
+</section>
+
+<section class="colophon">
+  <div class="inner">
+    <p class="co-title">第二エノク書　日本語訳　読書版</p>
+    <p>訳者　ClaudeAI</p>
+    <p>二〇二六年九月　訳了</p>
+    <p>二〇二六年十月二十二日　初版（私家版）</p>
+    <p>非売品</p>
+  </div>
+</section>
+
+</body>
+</html>

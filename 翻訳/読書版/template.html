@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>第二エノク書 日本語訳 読書版</title>
+<style>
+@page {
+  size: A5;
+  margin: 20mm 16mm 22mm 16mm;
+  @bottom-center {
+    content: counter(page);
+    writing-mode: horizontal-tb;
+    font-family: "Yu Mincho", "游明朝", serif;
+    font-size: 8pt;
+    color: #555;
+  }
+}
+@page cover { @bottom-center { content: none; } }
+
+html { writing-mode: vertical-rl; }
+body {
+  margin: 0;
+  font-family: "Yu Mincho", "游明朝", "YuMincho", "Nyala", "Ebrima", serif;
+  font-size: 9.5pt;
+  line-height: 1.8;
+  color: #111;
+  background: #fff;
+  font-feature-settings: "palt" 0;
+  text-align: justify;
+  line-break: strict;
+}
+b { font-weight: 600; }
+
+/* 一ページ全面を使う扉類 */
+.cover, .part-title {
+  page: cover;
+  block-size: 116mm;
+  inline-size: 168mm;
+  break-after: page;
+  display: flex;
+  justify-content: center;
+}
+.part-title { break-before: page; }
+
+.cover { flex-direction: column; }
+.cover .c-title { font-size: 26pt; letter-spacing: .3em; margin: 0 0 0 0; font-weight: 600; }
+.cover .c-sub { font-size: 11pt; letter-spacing: .2em; margin-block-start: 2em; padding-block-start: 0; }
+.cover .c-note { font-size: 8.5pt; color: #444; margin-block-start: 6em; }
+.cover p, .cover h1 { margin-inline: 0; margin-block-end: 0; text-indent: 0; }
+
+.pt-inner { margin-block: auto; padding-block-start: 0; }
+.part-title .pt-no { font-size: 11pt; letter-spacing: .3em; margin: 0 0 0 1.5em; padding-block-start: 4em; text-indent: 0; }
+.part-title h1 { font-size: 20pt; letter-spacing: .4em; margin: 0; padding-block-start: 4em; font-weight: 600; }
+.part-title .pt-span { font-size: 9pt; color: #444; margin: 0 1.5em 0 0; padding-block-start: 6em; text-indent: 0; }
+.part-title .pt-inner { display: flex; flex-direction: column; }
+
+/* 前付け */
+.front { break-after: page; }
+.front h2 { font-size: 13pt; letter-spacing: .3em; margin: 0 0 1.5em 0; font-weight: 600; }
+.front h3 { font-size: 10pt; margin: 1.5em 0 .3em 0; font-weight: 600; }
+.front p { margin: 0; text-indent: 1em; }
+.front ul { margin: 0; padding-inline-start: 1em; }
+
+.toc { break-after: page; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc a { color: inherit; text-decoration: none; display: flex; align-items: baseline; }
+.toc .leader { flex: 1; border-left: 1px dotted #888; margin: 0 .4em; min-block-size: 0; align-self: center; block-size: .5em; }
+.toc .n { text-combine-upright: all; }
+.toc .toc-part { font-weight: 600; margin-block-start: 1em; }
+.toc .toc-part:first-child { margin-block-start: 0; }
+.toc .toc-ch { font-size: 8.5pt; padding-inline-start: 1em; }
+.toc small { font-size: .9em; color: #444; }
+.toc .t { max-inline-size: 85%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* 本文 */
+.chapter { margin-block-start: 2.5em; }
+.part > .chapter:first-child { margin-block-start: 0; }
+.chapter h2 {
+  font-size: 12pt; font-weight: 600; letter-spacing: .2em;
+  margin: 0 0 0 .2em; break-after: avoid;
+}
+.chapter .subtitle {
+  font-size: 8.5pt; color: #444; margin: 0 0 1.2em 0; text-indent: 3em; break-after: avoid; break-before: avoid;
+}
+.chapter p { margin: 0; text-indent: 1em; orphans: 2; widows: 2; }
+.chapter .preface { font-size: .92em; color: #333; margin-block-end: .6em; }
+.v {
+  font-size: .62em; color: #777; margin-inline-end: .3em;
+  font-feature-settings: normal; text-indent: 0;
+}
+
+.notes {
+  margin-block-start: 1.2em;
+  padding-block-start: .8em;
+  border-right: .5pt solid #aaa;
+  font-size: 8pt;
+  line-height: 1.75;
+  color: #333;
+}
+.notes .notes-h { font-weight: 600; text-indent: 0; margin-block-end: .2em; }
+.notes p { text-indent: 1em; }
+.notes p + p { margin-block-start: .2em; }
+
+.colophon { break-before: page; display: flex; justify-content: flex-end; flex-direction: column; block-size: 116mm; }
+.colophon .inner { border-right: .5pt solid #888; border-left: .5pt solid #888; padding: 0 1.2em; font-size: 8.5pt; margin-inline-start: auto; }
+.colophon p { margin: 0; text-indent: 0; }
+.colophon .co-title { font-size: 11pt; font-weight: 600; margin-block-end: .8em; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <h1 class="c-title">第二エノク書</h1>
+  <p class="c-sub">エノクの秘密の書　日本語訳　読書版</p>
+  <p class="c-note">Ｗ・Ｒ・モーフィル英訳、Ｒ・Ｈ・チャールズ編（一八九六年）に基づいて訳出</p>
+</section>
+
+<section class="front">
+  <h2>はじめに</h2>
+  <p>「第二エノク書」は、「エノクの秘密の書」「スラヴ語エノク書」とも呼ばれる外典である。族長エノクが二人の天使に導かれて七つの天を昇り、天界の秩序と天地創造の秘密を主から直接示されたのち、地上に戻って子らに教えを託し、ふたたび天に取り去られるまでを、エノク自身の語りで描く。</p>
+  <p>本書は教会スラヴ語訳でのみ伝わり、元になったと推定されるギリシア語本文は失われている。成立年代には紀元一世紀ごろのユダヤ教の環境とする説から、中世の加筆を重く見る説まで幅がある。写本には内容と章立ての異なる長短二系統があり、最古の写本は十四世紀のものである。</p>
+  <h3>本書の構成</h3>
+  <ul>
+    <li>本文（第一〜六十八章）――エノクの昇天と七つの天の巡覧、天地創造の秘密の啓示、地上への帰還と子らへの訓戒、エノクの昇天と記念の祭壇</li>
+    <li>付録（第一〜五章）――メトシェラとニルの祭司職、メルキゼデクの奇跡的な誕生とエデンの園への移送、ノアの箱舟の補記。写本の一部（ソコロフ写本）にのみ見られる挿話で、チャールズは後代の増補と見ている</li>
+  </ul>
+  <h3>凡例</h3>
+  <ul>
+    <li>本訳は、パブリックドメインのＷ・Ｒ・モーフィル英訳（Ｒ・Ｈ・チャールズ編、一八九六年）を底本とし、日本語の文語調に訳出したものである。教会スラヴ語からの直接翻訳ではない。スラヴ語原文は、固有名詞や鍵語の確認に限って参照した。</li>
+    <li>章の区分・節番号は英訳底本に従う。節番号は本文中に小さく示した。</li>
+    <li>各章の題は、写本に付された見出しによる。見出しの由来（どの写本に見えるか）は訳注に記した。</li>
+    <li>第一章冒頭の序文は写本Ａにのみ見られる編者的な一段で、節番号を付さずに掲げた。</li>
+    <li>「異文」と記した節は、写本の一部にのみ見られる本文である。</li>
+    <li>本文中の（　）は、英訳者が意味を補った語句を示す。訳注は該当する章の末尾にまとめた。</li>
+    <li>本書は二段対訳（英訳・日本語訳）で作成した訳稿から、日本語訳と訳注のみを抜き出して組んだ読書用の版である。</li>
+  </ul>
+  <h3>底本</h3>
+  <ul>
+    <li>W. R. Morfill (tr.), R. H. Charles (ed.), <i>The Book of the Secrets of Enoch</i> (Oxford: Clarendon Press, 1896)</li>
+  </ul>
+</section>
+
+<nav class="toc">
+  <h2 style="font-size:13pt;letter-spacing:.3em;margin:0 0 1.2em 0;font-weight:600;">目次</h2>
+  <ol>
+{{TOC}}
+  </ol>
+</nav>
+
+{{BODY}}
+
+<section class="colophon">
+  <div class="inner">
+    <p class="co-title">第二エノク書　日本語訳　読書版</p>
+    <p>訳者　ClaudeAI</p>
+    <p>二〇二六年九月　訳了</p>
+    <p>二〇二六年十月二十二日　初版（私家版）</p>
+    <p>非売品</p>
+  </div>
+</section>
+
+</body>
+</html>
